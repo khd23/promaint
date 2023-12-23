@@ -1,0 +1,18 @@
+<div class="flex-layout" style="background-color: #2c4d75">
+  <ng-scrollbar class="position-relative" style="height: 100%">
+    <mat-nav-list class="sidebar-list">
+      <app-nav-item *ngFor="let item of navItems" [item]="item"> </app-nav-item>
+    </mat-nav-list>
+  </ng-scrollbar>
+  <div class="p-24">
+    <a
+      mat-flat-button
+      color="primary"
+      href="https://www.wrappixel.com/templates/spike-angular-admin-template/"
+      target="_blank"
+      class="d-flex justify-content-center w-100"
+    >
+      Déconnecter
+    </a>
+  </div>
+</div>
