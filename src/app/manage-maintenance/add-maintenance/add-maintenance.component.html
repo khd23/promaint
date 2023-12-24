@@ -1,0 +1,163 @@
+<mat-card class="w-100">
+  <mat-card-header>
+   <mat-card-title> Ajouter Ordre  de travail</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="container">
+      <div class="forms">
+        <div >
+          <form class="form-content" style="display:flex ; flex-direction: column">
+            <mat-form-field class="w-50 fs-16" appearance="outline">
+              <mat-label>Code</mat-label>
+              <input matInput type="text">
+            </mat-form-field>
+            <mat-form-field class="w-50 fs-16" appearance="outline">
+              <mat-label>Date de fabrication</mat-label>
+              <input matInput [matDatepicker]="picker1">
+              <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="w-50 fs-16" appearance="outline">
+              <mat-label>Déscription</mat-label>
+              <input matInput type="text">
+            </mat-form-field>
+            <mat-form-field class="w-100 fs-16" appearance="outline">
+              <mat-label>Opérateur</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                  {{food.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="w-50 fs-16" appearance="outline">
+              <mat-label>Code</mat-label>
+              <input matInput type="text">
+            </mat-form-field>
+            <mat-form-field class="w-50 fs-16" appearance="outline">
+              <mat-label>Date de fabrication</mat-label>
+              <input matInput [matDatepicker]="picker2">
+              <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="w-50 fs-16" appearance="outline">
+              <mat-label>Déscription</mat-label>
+              <input matInput type="text">
+            </mat-form-field>
+            <mat-form-field class="w-100 fs-16" appearance="outline">
+              <mat-label>Opérateur</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                  {{food.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="w-50 fs-16" appearance="outline">
+              <mat-label>Code</mat-label>
+              <input matInput type="text">
+            </mat-form-field>
+            <mat-form-field class="w-50 fs-16" appearance="outline">
+              <mat-label>Date de fabrication</mat-label>
+              <input matInput [matDatepicker]="picker3">
+              <mat-datepicker-toggle matIconSuffix [for]="picker3"></mat-datepicker-toggle>
+              <mat-datepicker #picker3></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="w-50 fs-16" appearance="outline">
+              <mat-label>Déscription</mat-label>
+              <input matInput type="text">
+            </mat-form-field>
+            <mat-form-field class="w-100 fs-16" appearance="outline">
+              <mat-label>Opérateur</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                  {{food.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </form>
+        </div>
+      </div>
+      <div class="maint-table">
+        <div class="table-responsive">
+          <mat-chip class="f-s-14" style="background-color: #1CB0CF" [routerLink]="['/add-equipement']" >
+            <img
+              matChipAvatar
+              src="./assets/images/icons/icon-add.png"
+              alt="Photo of a Shiba Inu"
+            />
+            <p style="color: white"> Ajouter</p>
+          </mat-chip>
+          <table mat-table [dataSource]="dataSource" class="text-nowrap w-100">
+
+            <!-- Id Column -->
+            <ng-container matColumnDef="code">
+              <th mat-header-cell *matHeaderCellDef> Code</th>
+              <td mat-cell class="fw-medium" *matCellDef="let element"> {{element.code}} </td>
+            </ng-container>
+
+            <!-- Assigned Column -->
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef> Date de fabrication</th>
+              <td mat-cell *matCellDef="let element">
+                <p class="mb-0 fw-medium">{{ element.date }}</p>
+              </td>
+            </ng-container>
+
+            <!-- Project Column -->
+            <ng-container matColumnDef="type">
+              <th mat-header-cell *matHeaderCellDef> Type</th>
+              <td mat-cell *matCellDef="let element">
+                <p class="mb-0 fw-medium">{{element.type}}</p>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="brand">
+              <th mat-header-cell *matHeaderCellDef>Marque</th>
+              <td mat-cell *matCellDef="let element">
+                <p class="mb-0 fw-medium">{{element.brand}}</p>
+              </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="ref">
+              <th mat-header-cell *matHeaderCellDef> Reference</th>
+              <td mat-cell *matCellDef="let element">
+                <p class="mb-0 fw-medium">{{element.ref}}</p>
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Actions</th>
+              <td mat-cell *matCellDef="let element">
+                <button
+                  mat-icon-button
+                  [matMenuTriggerFor]="menu"
+                  aria-label="Example icon-button with a menu"
+                >
+                  <mat-icon>
+                    <i-tabler name="dots" class="icon-20"></i-tabler>
+                  </mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" class="cardWithShadow">
+                  <button mat-menu-item>Demande de réparation</button>
+                  <button mat-menu-item>Emettre un bon de travail</button>
+                  <button mat-menu-item>Ajouter depenses</button>
+                  <button mat-menu-item>Ajouter consommation</button>
+                  <button mat-menu-item>Inspection</button>
+                  <button mat-menu-item>Configuration des tâches</button>
+                  <button mat-menu-item>Historique</button>
+                  <button mat-menu-item>Modifier</button>
+                  <button mat-menu-item>Supprimer</button>
+
+                </mat-menu>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>

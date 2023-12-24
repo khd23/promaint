@@ -1,0 +1,118 @@
+<mat-card class="w-100">
+  <mat-card-header>
+    <h4 class="mb-56">Ordres de travail</h4>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-grid-list cols="4" rowHeight="100px">
+      <mat-grid-tile [colspan]=3 [rowspan]=1>
+        <mat-form-field class="w-100" color="primary">
+          <!--          <i-feather name="search" class="mt-n3 text-light-muted feather-base text-dark"></i-feather>-->
+          <mat-label class="fs-16">Rechercher Ici</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]=1 [rowspan]=1>
+        <mat-chip class="f-s-14" style="background-color: #1CB0CF" [routerLink]="['/add-maintenance']">
+          <img
+            matChipAvatar
+            src="./assets/images/icons/icon-add.png"
+            alt="Photo of a Shiba Inu"
+          />
+          <p style="color: white"> Ajouter</p>
+        </mat-chip>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <div class="table-responsive">
+      <table mat-table [dataSource]="dataSource" class="text-nowrap w-100">
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>OT</th>
+          <td mat-cell class="fw-medium" *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Assigned Column -->
+        <ng-container matColumnDef="code">
+          <th mat-header-cell *matHeaderCellDef>Code</th>
+          <td mat-cell *matCellDef="let element">
+            <p class="mb-0 fw-medium">{{ element.code }}</p>
+          </td>
+        </ng-container>
+
+        <!-- Project Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Etat</th>
+          <td mat-cell *matCellDef="let element">
+            <span class="badge {{element.badge}} rounded-pill"
+                  *ngIf="element.status!='encours'">{{element.status}}</span>
+          </td>
+        </ng-container>
+
+        <!-- Priority Column -->
+        <ng-container matColumnDef="technicien">
+          <th mat-header-cell *matHeaderCellDef>Technicien</th>
+          <td mat-cell *matCellDef="let element">
+            <p class="mb-0 fw-medium">{{element.technicien}}</p>
+          </td>
+        </ng-container>
+
+        <!-- Budget Column -->
+        <ng-container matColumnDef="progress">
+          <th mat-header-cell *matHeaderCellDef> Progression</th>
+          <td mat-cell *matCellDef="let element">
+            <app-progress-bar [value]="element.progress"></app-progress-bar>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="total">
+          <th mat-header-cell *matHeaderCellDef> Cout total</th>
+          <td mat-cell *matCellDef="let element">
+            <p class="mb-0 fw-medium">{{element.total}}</p>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Actions</th>
+          <td mat-cell *matCellDef="let element">
+            <div  style="display: flex; flex-direction: row">
+              <button mat-fab color="warn" class="shadow-none icon-48" (click)="openDialog()">
+                <i-tabler
+                  class="routeIcon"
+                  name="edit"
+                  matListItemIcon
+                ></i-tabler>
+              </button>
+              <div>
+                <button
+                  mat-icon-button
+                  [matMenuTriggerFor]="menu"
+                  aria-label="Example icon-button with a menu"
+                >
+
+                  <mat-icon>
+                    <i-tabler name="dots" class="icon-20"></i-tabler>
+                  </mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" class="cardWithShadow">
+                  <button mat-menu-item>Demande de réparation</button>
+                  <button mat-menu-item>Emettre un bon de travail</button>
+                  <button mat-menu-item>Ajouter depenses</button>
+                  <button mat-menu-item>Ajouter consommation</button>
+                  <button mat-menu-item>Inspection</button>
+                  <button mat-menu-item>Configuration des tâches</button>
+                  <button mat-menu-item>Historique</button>
+                  <button mat-menu-item>Modifier</button>
+                  <button mat-menu-item>Supprimer</button>
+
+                </mat-menu>
+              </div>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>

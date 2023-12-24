@@ -20,7 +20,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Ordre de travail',
     iconName: 'checkup-list',
-    route: '/ui-components/chips',
+    route: '/maintenances-list',
   },
   {
     displayName: 'Inventaires',

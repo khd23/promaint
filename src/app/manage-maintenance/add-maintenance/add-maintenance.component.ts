@@ -1,16 +1,6 @@
 import { Component } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
-import {DetailsModalComponent} from "../details-modal/details-modal.component";
-// import { CommonModule } from '@angular/common';
-// import {CardBodyComponent, CardComponent, CardHeaderComponent, ColComponent, TableDirective} from "@coreui/angular";
-// import {DocsComponentsModule} from "@docs-components/docs-components.module";
-// import {MatCardModule} from "@angular/material/card";
-// import {MatGridListModule} from "@angular/material/grid-list";
-// import {MatInputModule} from "@angular/material/input";
-// import {MatIconModule} from "@angular/material/icon";
-// import {RouterLink} from "@angular/router";
-// import {MatTableModule} from "@angular/material/table";
-
+import {DetailsModalComponent} from "../../manage-equipements/details-modal/details-modal.component";
 
 export interface Equipement {
   code: string;
@@ -33,14 +23,18 @@ const ELEMENT_DATA: Equipement[] = [
   { code: 'V005', date: '2018', type: 'Voiture',brand:'VW', mh: '7500 km', serial: 'LOKJ14569', ref: 'YWG-256', status: 'encours', badge:'',progress:45  },
 
 ];
-
 @Component({
-  selector: 'app-equipements-lit',
-  templateUrl: './equipements-lit.component.html',
-  styleUrls: ['./equipements-lit.component.scss']
+  selector: 'app-add-maintenance',
+  templateUrl: './add-maintenance.component.html',
+  styleUrls: ['./add-maintenance.component.scss']
 })
-export class EquipementsLitComponent {
-  displayedColumns: string[] = ['code', 'date', 'type','brand' ,'mh', 'serial','ref','status','details','actions'];
+export class AddMaintenanceComponent {
+  foods: any[] = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'},
+  ];
+  displayedColumns: string[] = ['code', 'date', 'type','brand', 'ref','actions'];
   dataSource = ELEMENT_DATA;
   animal: string="";
   name: string="";
@@ -56,9 +50,6 @@ export class EquipementsLitComponent {
       console.log('The dialog was closed');
       this.animal = result;
     });
-  }
+}
 
-
-  ngOnInit(): void {
-  }
 }

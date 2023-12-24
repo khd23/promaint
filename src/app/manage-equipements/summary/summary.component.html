@@ -1,0 +1,101 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">Notifications</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <div class="row">
+      <div class="col-sm-6 col-lg-4">
+        <mat-card class="b-1 shadow-none">
+          <mat-card-header>
+            <mat-card-title>PM</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="b-t-1">
+            <h2>0</h2>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <mat-card class="b-1 shadow-none">
+          <mat-card-header>
+            <mat-card-title>Reparation</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="b-t-1">
+            <h2>0</h2>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <mat-card class="b-1 shadow-none">
+          <mat-card-header>
+            <mat-card-title>Renouvellement</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="b-t-1">
+            <h2>0</h2>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+      <!-- --------------------------------------------------------------------------- -->
+      <!-- Profit & Expenses -->
+      <!-- --------------------------------------------------------------------------- -->
+      <div class="col-lg-6">
+        <mat-card class="cardWithShadow">
+          <mat-card-content class="p-24">
+            <div class="d-flex w-100">
+              <mat-card-title style="color: #15263a">Coût de service $</mat-card-title>
+
+            </div>
+            <apx-chart
+              [series]="profitExpanceChart.series"
+              [dataLabels]="profitExpanceChart.dataLabels"
+              [chart]="profitExpanceChart.chart"
+              [legend]="profitExpanceChart.legend"
+              [xaxis]="profitExpanceChart.xaxis"
+              [yaxis]="profitExpanceChart.yaxis"
+              [grid]="profitExpanceChart.grid"
+              [stroke]="profitExpanceChart.stroke"
+              [tooltip]="profitExpanceChart.tooltip"
+              [plotOptions]="profitExpanceChart.plotOptions"
+            ></apx-chart>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-lg-6">
+        <mat-card class="cardWithShadow">
+          <mat-card-content class="p-24">
+            <div class="d-flex w-100">
+              <mat-card-title style="color: #15263a">Coût d'enérgie '$</mat-card-title>
+
+            </div>
+            <apx-chart
+              [series]="profitExpanceChart.series"
+              [dataLabels]="profitExpanceChart.dataLabels"
+              [chart]="profitExpanceChart.chart"
+              [legend]="profitExpanceChart.legend"
+              [xaxis]="profitExpanceChart.xaxis"
+              [yaxis]="profitExpanceChart.yaxis"
+              [grid]="profitExpanceChart.grid"
+              [stroke]="profitExpanceChart.stroke"
+              [tooltip]="profitExpanceChart.tooltip"
+              [plotOptions]="profitExpanceChart.plotOptions"
+            ></apx-chart>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!-- --------------------------------------------------------------------------- -->
+      <!-- end Profit & Expenses -->
+      <!-- --------------------------------------------------------------------------- -->
+
+
+    </div>
+
+        <mat-card-title style="color: #15263a">heures d'arrêt</mat-card-title>
+        <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+
+  </mat-card-content>
+</mat-card>

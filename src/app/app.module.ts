@@ -26,6 +26,19 @@ import { BrandingComponent } from './layouts/full/sidebar/branding.component';
 import { AppNavItemComponent } from './layouts/full/sidebar/nav-item/nav-item.component';
 import { EquipementsLitComponent } from './manage-equipements/equipements-lit/equipements-lit.component';
 import {MatIconModule} from "@angular/material/icon";
+import { ProgressBarComponent } from './pages/ui-components/progress-bar/progress-bar.component';
+import { DetailsModalComponent } from './manage-equipements/details-modal/details-modal.component';
+import { SummaryComponent } from './manage-equipements/summary/summary.component';
+import {NgApexchartsModule} from "ng-apexcharts";
+import { AddEquipemntComponent } from './manage-equipements/add-equipemnt/add-equipemnt.component';
+import { AddEquipemntMainComponent } from './manage-equipements/add-equipemnt-main/add-equipemnt-main.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import { MaintenanceListComponent } from './manage-maintenance/maintenance-list/maintenance-list.component';
+import { AddMaintenanceComponent } from './manage-maintenance/add-maintenance/add-maintenance.component';
+import { EditMaintenanceComponent } from './manage-maintenance/edit-maintenance/edit-maintenance.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +50,14 @@ import {MatIconModule} from "@angular/material/icon";
     BrandingComponent,
     AppNavItemComponent,
     EquipementsLitComponent,
+    ProgressBarComponent,
+    DetailsModalComponent,
+    SummaryComponent,
+    AddEquipemntComponent,
+    AddEquipemntMainComponent,
+    MaintenanceListComponent,
+    AddMaintenanceComponent,
+    EditMaintenanceComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +69,12 @@ import {MatIconModule} from "@angular/material/icon";
     MaterialModule,
     TablerIconsModule.pick(TablerIcons),
     NgScrollbarModule,
-    MatIconModule
+    MatIconModule,
+    NgApexchartsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [TablerIconsModule],
   bootstrap: [AppComponent],

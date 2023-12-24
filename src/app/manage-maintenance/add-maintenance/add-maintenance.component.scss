@@ -1,3 +1,15 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.forms{
+  flex: 1 1 auto;
+}
+.maint-table{
+  flex: 1 2 auto;
+}
 .table-responsive {
   overflow-x: auto;
 }
@@ -54,3 +66,4 @@ mat-grid-tile {
 .badge-success {
   background-color: #eda76e;
 }
+

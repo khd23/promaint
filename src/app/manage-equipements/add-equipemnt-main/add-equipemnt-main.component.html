@@ -1,0 +1,83 @@
+<div class="card">
+  <div class="card-body">
+    <form class="form-content">
+      <mat-form-field class="w-50 fs-16" appearance="outline">
+        <mat-label>Code</mat-label>
+        <input matInput type="text" >
+      </mat-form-field>
+      <mat-form-field class="w-50 fs-16" appearance="outline" >
+        <mat-label>Constructeur</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="w-50 fs-16" appearance="outline">
+        <mat-label>Date de fabrication</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="w-50 fs-16" appearance="outline">
+        <mat-label>Numéro de serie</mat-label>
+        <input matInput type="text"  >
+      </mat-form-field>
+
+      <mat-form-field class="w-50 fs-16" appearance="outline">
+        <mat-label>Référence</mat-label>
+        <input matInput type="text">
+      </mat-form-field>
+      <mat-form-field class="w-50 fs-16" appearance="outline">
+        <mat-label>Type</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="w-50 fs-16" appearance="outline">
+        <mat-label>Déscription</mat-label>
+        <input matInput type="text"  >
+      </mat-form-field>
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Lieux</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Etat</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Opérateur</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Facturation</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>kilometrage /Heures</mat-label>
+        <input matInput type="text"  >
+      </mat-form-field>
+
+    </form>
+  </div>
+</div>
+

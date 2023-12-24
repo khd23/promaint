@@ -1,8 +1,11 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { BlankComponent } from './layouts/blank/blank.component';
-import { FullComponent } from './layouts/full/full.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {BlankComponent} from './layouts/blank/blank.component';
+import {FullComponent} from './layouts/full/full.component';
 import {EquipementsLitComponent} from "./manage-equipements/equipements-lit/equipements-lit.component";
+import {AddEquipemntComponent} from "./manage-equipements/add-equipemnt/add-equipemnt.component";
+import {MaintenanceListComponent} from "./manage-maintenance/maintenance-list/maintenance-list.component";
+import {AddMaintenanceComponent} from "./manage-maintenance/add-maintenance/add-maintenance.component";
 
 const routes: Routes = [
   {
@@ -20,6 +23,27 @@ const routes: Routes = [
         component: EquipementsLitComponent,
         data: {
           title: 'Liste des équipements'
+        }
+      },
+      {
+        path: 'maintenances-list',
+        component: MaintenanceListComponent,
+        data: {
+          title: 'Ordres de travail'
+        }
+      },
+      {
+        path: 'add-maintenance',
+        component: AddMaintenanceComponent,
+        data: {
+          title: 'Ajouter Ordre de travail'
+        }
+      },
+      {
+        path: 'add-equipement',
+        component: AddEquipemntComponent,
+        data: {
+          title: 'Ajouter équipement'
         },
       },
       {
@@ -60,4 +84,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}
