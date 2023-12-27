@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -39,8 +39,25 @@ import {MatNativeDateModule} from "@angular/material/core";
 import { MaintenanceListComponent } from './manage-maintenance/maintenance-list/maintenance-list.component';
 import { AddMaintenanceComponent } from './manage-maintenance/add-maintenance/add-maintenance.component';
 import { EditMaintenanceComponent } from './manage-maintenance/edit-maintenance/edit-maintenance.component';
+import {NotifierModule} from "angular-notifier";
+import { AddMaintenanceTabComponent } from './manage-maintenance/add-maintenance-tab/add-maintenance-tab.component';
+import { InventoryListComponent } from './manage-inventory/inventory-list/inventory-list.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import {SchedulerModule} from "angular-calendar-scheduler";
+import {CalendarModule, DateAdapter, MOMENT} from "angular-calendar";
+import {adapterFactory} from "angular-calendar/date-adapters/moment";
+import * as moment from "moment";
+import {registerLocaleData} from "@angular/common";
+import localeFr from '@angular/common/locales/fr';
+import localeFrExtra from '@angular/common/locales/extra/fr';
+registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
+export function momentAdapterFactory() {
+  return adapterFactory(moment);
+};
+// @ts-ignore
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     FullComponent,
@@ -58,8 +75,11 @@ import { EditMaintenanceComponent } from './manage-maintenance/edit-maintenance/
     MaintenanceListComponent,
     AddMaintenanceComponent,
     EditMaintenanceComponent,
+    AddMaintenanceTabComponent,
+    InventoryListComponent,
+    CalendarComponent,
   ],
-  imports: [
+  exports: [TablerIconsModule], imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -74,9 +94,15 @@ import { EditMaintenanceComponent } from './manage-maintenance/edit-maintenance/
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    NotifierModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: momentAdapterFactory }),
+    SchedulerModule.forRoot({locale: 'fr', headerDateFormat: 'daysRange'}),
+
   ],
-  exports: [TablerIconsModule],
-  bootstrap: [AppComponent],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'fr-FR'},
+    {provide: MOMENT, useValue: moment}
+  ],
 })
 export class AppModule {}

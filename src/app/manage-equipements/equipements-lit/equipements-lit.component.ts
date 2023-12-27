@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {DetailsModalComponent} from "../details-modal/details-modal.component";
+import {MatSnackBar} from "@angular/material/snack-bar";
 // import { CommonModule } from '@angular/common';
 // import {CardBodyComponent, CardComponent, CardHeaderComponent, ColComponent, TableDirective} from "@coreui/angular";
 // import {DocsComponentsModule} from "@docs-components/docs-components.module";
@@ -45,7 +46,8 @@ export class EquipementsLitComponent {
   animal: string="";
   name: string="";
   search: boolean = false;
-  constructor(public dialog: MatDialog) {}
+
+  constructor(public dialog: MatDialog,private _snackBar: MatSnackBar) {}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DetailsModalComponent, {
@@ -60,5 +62,6 @@ export class EquipementsLitComponent {
 
 
   ngOnInit(): void {
+      //this._snackBar.open("message", "action");
   }
 }

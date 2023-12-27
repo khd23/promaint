@@ -1,41 +1,6 @@
-.container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.forms{
-  flex: 1 1 auto;
-}
-.maint-table{
-  flex: 1 2 auto;
-  margin-left: 50px;
-  //display: flex;
-
-}
-.total-tab{
-  justify-content: start;
- // align-self: flex-end;
-  margin-top: 150px;
-  margin-left: 500px;
-}
-
 .table-responsive {
   overflow-x: auto;
 }
-
-.example-label {
-  display: table-cell;
-  font-size: 14px;
-  min-width: 120px;
-}
-
-.example-button-row {
-  display:flex;
-  justify-content: space-evenly;
-
-}
-
 
 td.mat-cell {
   padding: 16px;
@@ -45,13 +10,6 @@ th.mat-header-cell:first-of-type,
 td.mat-cell:first-of-type,
 td.mat-footer-cell:first-of-type {
   padding: 16px;
-}
-
-
-.add-button{
-  background-color: #1CB0CF;
-  margin-left: 20px;
-  margin-bottom: 20px;
 }
 
 th.mat-header-cell {
@@ -96,4 +54,3 @@ mat-grid-tile {
 .badge-success {
   background-color: #eda76e;
 }
-

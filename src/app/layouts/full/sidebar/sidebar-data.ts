@@ -25,7 +25,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Inventaires',
     iconName: 'box',
-    route: '/ui-components/lists',
+    route: '/inventory-list',
   },
   {
     displayName: 'Achat',
@@ -50,7 +50,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Calendrier',
     iconName: 'calendar',
-    route: '/extra/icons',
+    route: '/calendar',
   },
   // {
   //   displayName: 'Sample Page',

@@ -6,6 +6,8 @@ import {EquipementsLitComponent} from "./manage-equipements/equipements-lit/equi
 import {AddEquipemntComponent} from "./manage-equipements/add-equipemnt/add-equipemnt.component";
 import {MaintenanceListComponent} from "./manage-maintenance/maintenance-list/maintenance-list.component";
 import {AddMaintenanceComponent} from "./manage-maintenance/add-maintenance/add-maintenance.component";
+import {InventoryListComponent} from "./manage-inventory/inventory-list/inventory-list.component";
+import {CalendarComponent} from "./calendar/calendar.component";
 
 const routes: Routes = [
   {
@@ -45,6 +47,20 @@ const routes: Routes = [
         data: {
           title: 'Ajouter équipement'
         },
+      },
+      {
+        path: 'inventory-list',
+        component: InventoryListComponent,
+        data: {
+          title: 'Inventaires'
+        }
+      },
+      {
+        path: 'calendar',
+        component: CalendarComponent,
+        data: {
+          title: 'Calendrier'
+        }
       },
       {
         path: 'dashboard',
