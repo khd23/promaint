@@ -35,7 +35,7 @@
                 <ng-container matColumnDef="status">
                     <th mat-header-cell *matHeaderCellDef>Etat </th>
                     <td mat-cell *matCellDef="let element">
-                        <p class="mb-0 fw-medium">{{ element.status }}</p>
+                        <span class="badge badge-primary rounded-pill" *ngIf="element.status!='encours'">{{element.status}}</span>
                     </td>
                 </ng-container>
 

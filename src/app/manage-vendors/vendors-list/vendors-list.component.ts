@@ -5,15 +5,16 @@ export interface Vendor {
   id:number;
   name: string;
   type: string;
-  adress:  string;
+  adress: string;
   contact: string;
 }
 
 const ELEMENT_DATA: Vendor[] = [
-  { id: 25,name: 'Adel Drihmi', type:"Technicien", adress:"9548326",contact: "adel.drihmi@gmail.com" },
-  { id: 25,name: 'Ahmed Saadaoui', type:"Technicien", adress:"5896341",contact: "ahmed.saadaoui5@gmail.com" },
-  { id: 25,name: 'Mohamed Ali Ferjani', type:"Manager", adress:"2587465",contact: "medali.ferjani@gmail.com" },
-  { id: 25,name: 'Mohamed Omri', type:"Chauffeur", adress:"3214789",contact: "mohamed.omri@gmail.com" },
+  { id: 25,name: 'Suzuki', type:"Fabricant", adress:"US",contact: "Amir amri" },
+  { id: 27,name: 'Star', type:"Assurance ", adress:"TN",contact: "Ali saidi" },
+  { id: 32,name: 'Mercedes Benz', type:"Fabricant", adress:"TN",contact: "Mohamed bouazizi" },
+  { id: 33,name: 'Sany', type:"Fabricant", adress:"TN",contact: "Amer alaya" },
+  { id: 34,name: 'J&R equipement', type:"Fabricant", adress:"WV",contact: "Anoir Chebbi" },
 
 
 ];
