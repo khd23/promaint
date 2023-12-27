@@ -50,6 +50,11 @@ import * as moment from "moment";
 import {registerLocaleData} from "@angular/common";
 import localeFr from '@angular/common/locales/fr';
 import localeFrExtra from '@angular/common/locales/extra/fr';
+import { InvocesListComponent } from './manage-invoces/invoces-list/invoces-list.component';
+import { EmployeesListComponent } from './manage-employees/employees-list/employees-list.component';
+import { PurcahsingListComponent } from './manage-purchasing/purcahsing-list/purcahsing-list.component';
+import { VendorsListComponent } from './manage-vendors/vendors-list/vendors-list.component';
+import {AppService} from "./services/app.service";
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
 export function momentAdapterFactory() {
@@ -78,6 +83,10 @@ export function momentAdapterFactory() {
     AddMaintenanceTabComponent,
     InventoryListComponent,
     CalendarComponent,
+    InvocesListComponent,
+    EmployeesListComponent,
+    PurcahsingListComponent,
+    VendorsListComponent,
   ],
   exports: [TablerIconsModule], imports: [
     BrowserModule,
@@ -101,6 +110,7 @@ export function momentAdapterFactory() {
 
   ],
   providers: [
+    AppService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
     {provide: MOMENT, useValue: moment}
   ],
