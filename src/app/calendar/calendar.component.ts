@@ -20,6 +20,7 @@ import {
 } from "angular-calendar-scheduler";
 import {Subject} from "rxjs";
 import {addMonths, endOfDay} from "date-fns";
+import {AppService} from "../services/app.service";
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
@@ -78,7 +79,8 @@ export class CalendarComponent {
 
   @ViewChild(CalendarSchedulerViewComponent) calendarScheduler!: CalendarSchedulerViewComponent;
 
-  constructor(@Inject(LOCALE_ID) locale: string, private dateAdapter: DateAdapter) {
+
+  constructor(@Inject(LOCALE_ID) locale: string, private appService: AppService, private dateAdapter: DateAdapter) {
     this.locale = locale;
 
     this.dayModifier = ((day: SchedulerViewDay): void => {
@@ -105,10 +107,9 @@ export class CalendarComponent {
 
     this.dateOrViewChanged();
   }
-
   ngOnInit(): void {
-    // this.appService.getEvents(this.actions)
-    //   .then((events: CalendarSchedulerEvent[]) => this.events = events);
+    this.appService.getEvents(this.actions)
+      .then((events: CalendarSchedulerEvent[]) => this.events = events);
   }
 
   viewDaysOptionChanged(viewDays: string): void {
