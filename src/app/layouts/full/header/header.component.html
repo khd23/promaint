@@ -27,12 +27,20 @@
   <!-- --------------------------------------------------------------- -->
   <!-- profile Dropdown -->
   <!-- --------------------------------------------------------------- -->
-  <button mat-icon-button aria-label="Notifications" [matMenuTriggerFor]="menu">
-    <i-tabler class="d-flex" name="bell" matBadge="9" matBadgeColor="primary"></i-tabler>
+  <button mat-icon-button aria-label="Notifications" [matMenuTriggerFor]="menu"  (click)="isBadgeHidden = !isBadgeHidden">
+    <i-tabler class="d-flex" name="bell" matBadge="6" matBadgeColor="primary" [matBadgeHidden]="isBadgeHidden"></i-tabler>
+
   </button>
-  <mat-menu #menu="matMenu" class="cardWithShadow">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
+  <mat-menu #menu="matMenu" class="cardWithShadow" xPosition="before">
+    <mat-list>
+      <mat-list-item *ngFor="let message of messages">
+        <mat-icon style="color: darkred" matListItemIcon>{{message.icon}}</mat-icon>
+        <h3 matListItemTitle>{{message.subject}}</h3>
+        <p matListItemLine>
+          <span class="demo-2">  {{message.content}}</span>
+        </p>
+      </mat-list-item>
+    </mat-list>
   </mat-menu>
   <button
     mat-icon-button

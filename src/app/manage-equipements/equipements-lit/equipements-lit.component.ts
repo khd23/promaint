@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {DetailsModalComponent} from "../details-modal/details-modal.component";
-import {MatSnackBar} from "@angular/material/snack-bar";
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
+import {NotifierService} from "angular-notifier";
 // import { CommonModule } from '@angular/common';
 // import {CardBodyComponent, CardComponent, CardHeaderComponent, ColComponent, TableDirective} from "@coreui/angular";
 // import {DocsComponentsModule} from "@docs-components/docs-components.module";
@@ -46,8 +47,9 @@ export class EquipementsLitComponent {
   animal: string="";
   name: string="";
   search: boolean = false;
-
-  constructor(public dialog: MatDialog,private _snackBar: MatSnackBar) {}
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  constructor(public dialog: MatDialog,private notifier: NotifierService, private snackBar: MatSnackBar) {}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DetailsModalComponent, {
@@ -62,6 +64,77 @@ export class EquipementsLitComponent {
 
 
   ngOnInit(): void {
-      //this._snackBar.open("message", "action");
+    this.showNotification( 'warning', 'Temprétature élevée: Plieuse E001' );
+    this.showNotification( 'warning', 'Vibration excessif: Cinteuse E002' );
+    this.showNotification( 'warning', 'Niveau dhuile bas: Camion C004' );
+    this.showNotification( 'warning', 'Pression hydraulique élevée: Plieuse E001' );
+    this.showNotification( 'error', 'Entretien dépassé: Plieuse E001' );
+    this.showNotification( 'warning', 'Entretien proche: Cinteuse E002' );
+
+    //
+    // this.snackBar.open("Notification 1!", 'Fermer', {
+    //   horizontalPosition: this.horizontalPosition,
+    //   verticalPosition: this.verticalPosition,
+    //   duration: 5000,
+    //   panelClass: ['snackbar-1']
+    // })
+
+
+  }
+
+
+  /**
+   * Show a notification
+   *
+   * @param {string} type    Notification type
+   * @param {string} message Notification message
+   */
+  public showNotification( type: string, message: string ): void {
+    this.notifier.notify( type, message );
+  }
+
+  /**
+   * Hide oldest notification
+   */
+  public hideOldestNotification(): void {
+    this.notifier.hideOldest();
+  }
+
+  /**
+   * Hide newest notification
+   */
+  public hideNewestNotification(): void {
+    this.notifier.hideNewest();
+  }
+
+  /**
+   * Hide all notifications at once
+   */
+  public hideAllNotifications(): void {
+    this.notifier.hideAll();
+  }
+
+  /**
+   * Show a specific notification (with a custom notification ID)
+   *
+   * @param {string} type    Notification type
+   * @param {string} message Notification message
+   * @param {string} id      Notification ID
+   */
+  public showSpecificNotification( type: string, message: string, id: string ): void {
+    this.notifier.show( {
+      id,
+      message,
+      type
+    } );
+  }
+
+  /**
+   * Hide a specific notification (by a given notification ID)
+   *
+   * @param {string} id Notification ID
+   */
+  public hideSpecificNotification( id: string ): void {
+    this.notifier.hide( id );
   }
 }

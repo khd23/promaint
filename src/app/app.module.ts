@@ -39,7 +39,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import { MaintenanceListComponent } from './manage-maintenance/maintenance-list/maintenance-list.component';
 import { AddMaintenanceComponent } from './manage-maintenance/add-maintenance/add-maintenance.component';
 import { EditMaintenanceComponent } from './manage-maintenance/edit-maintenance/edit-maintenance.component';
-import {NotifierModule} from "angular-notifier";
+import {NotifierModule, NotifierOptions} from "angular-notifier";
 import { AddMaintenanceTabComponent } from './manage-maintenance/add-maintenance-tab/add-maintenance-tab.component';
 import { InventoryListComponent } from './manage-inventory/inventory-list/inventory-list.component';
 import { CalendarComponent } from './calendar/calendar.component';
@@ -55,11 +55,13 @@ import { EmployeesListComponent } from './manage-employees/employees-list/employ
 import { PurcahsingListComponent } from './manage-purchasing/purcahsing-list/purcahsing-list.component';
 import { VendorsListComponent } from './manage-vendors/vendors-list/vendors-list.component';
 import {AppService} from "./services/app.service";
+import {customNotifierOptions} from "./configurations/customNotifierOptions";
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
 export function momentAdapterFactory() {
   return adapterFactory(moment);
 };
+
 // @ts-ignore
 @NgModule({
   bootstrap: [AppComponent],
@@ -88,7 +90,8 @@ export function momentAdapterFactory() {
     PurcahsingListComponent,
     VendorsListComponent,
   ],
-  exports: [TablerIconsModule], imports: [
+  exports: [TablerIconsModule],
+  imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -104,7 +107,7 @@ export function momentAdapterFactory() {
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    NotifierModule,
+    NotifierModule.withConfig(customNotifierOptions),
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: momentAdapterFactory }),
     SchedulerModule.forRoot({locale: 'fr', headerDateFormat: 'daysRange'}),
 
