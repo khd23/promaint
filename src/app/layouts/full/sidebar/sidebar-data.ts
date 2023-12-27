@@ -30,22 +30,22 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Achat',
     iconName: 'shopping-cart',
-    route: '/ui-components/menu',
+    route: '/purchasing-list',
   },
   {
     displayName: 'Factures',
     iconName: 'file-dollar',
-    route: '/ui-components/tooltips',
+    route: '/invoces-list',
   },
   {
     displayName: 'Employés',
     iconName: 'users-group',
-    route: '/authentication/login',
+    route: '/employees-list',
   },
   {
     displayName: 'Vendeurs',
     iconName: 'building',
-    route: '/authentication/register',
+    route: '/vendors-list',
   },
   {
     displayName: 'Calendrier',

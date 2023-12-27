@@ -8,6 +8,10 @@ import {MaintenanceListComponent} from "./manage-maintenance/maintenance-list/ma
 import {AddMaintenanceComponent} from "./manage-maintenance/add-maintenance/add-maintenance.component";
 import {InventoryListComponent} from "./manage-inventory/inventory-list/inventory-list.component";
 import {CalendarComponent} from "./calendar/calendar.component";
+import {PurcahsingListComponent} from "./manage-purchasing/purcahsing-list/purcahsing-list.component";
+import {InvocesListComponent} from "./manage-invoces/invoces-list/invoces-list.component";
+import {VendorsListComponent} from "./manage-vendors/vendors-list/vendors-list.component";
+import {EmployeesListComponent} from "./manage-employees/employees-list/employees-list.component";
 
 const routes: Routes = [
   {
@@ -53,6 +57,35 @@ const routes: Routes = [
         component: InventoryListComponent,
         data: {
           title: 'Inventaires'
+        }
+      },
+
+      {
+        path: 'purchasing-list',
+        component: PurcahsingListComponent,
+        data: {
+          title: 'Liste des achats'
+        }
+      },
+      {
+        path: 'invoces-list',
+        component: InvocesListComponent,
+        data: {
+          title: 'Factures'
+        }
+      },
+      {
+        path: 'vendors-list',
+        component: VendorsListComponent,
+        data: {
+          title: 'Vendeurs'
+        }
+      },
+      {
+        path: 'employees-list',
+        component: EmployeesListComponent,
+        data: {
+          title: 'Employes'
         }
       },
       {
