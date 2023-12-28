@@ -93,13 +93,13 @@
                     <i-tabler name="dots" class="icon-20"></i-tabler>
                   </mat-icon>
                 </button>
-                <mat-menu #menu="matMenu" class="cardWithShadow">
-                  <button mat-menu-item>Imprimer</button>
-                  <button mat-menu-item>changer technicien</button>
-                  <button mat-menu-item>Changer priorité</button>
-                  <button mat-menu-item>Changer priorité</button>
-                  <button mat-menu-item>Inspection</button>
-                  <button mat-menu-item>Supprimer</button>
+                <mat-menu #menu="matMenu" class="cardWithShadow"  xPosition="before">
+                  <button mat-menu-item><mat-icon matListItemIcon>print</mat-icon>Imprimer</button>
+                  <button mat-menu-item><mat-icon matListItemIcon>person_add</mat-icon>Changer technicien</button>
+                  <button mat-menu-item><mat-icon matListItemIcon>low_priority</mat-icon>Changer priorité</button>
+                  <button mat-menu-item><mat-icon matListItemIcon>edit</mat-icon>Changer Etat</button>
+                  <button mat-menu-item><mat-icon matListItemIcon>zoom_in</mat-icon>Inspection</button>
+                  <button mat-menu-item><mat-icon matListItemIcon>delete</mat-icon>Supprimer</button>
 
                 </mat-menu>
               </div>

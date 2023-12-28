@@ -31,7 +31,7 @@
     <i-tabler class="d-flex" name="bell" matBadge="6" matBadgeColor="primary" [matBadgeHidden]="isBadgeHidden"></i-tabler>
 
   </button>
-  <mat-menu #menu="matMenu" class="cardWithShadow" xPosition="before">
+  <mat-menu #menu="matMenu" class="cardWithShadow" >
     <mat-list>
       <mat-list-item *ngFor="let message of messages">
         <mat-icon style="color: darkred" matListItemIcon>{{message.icon}}</mat-icon>

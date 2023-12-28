@@ -23,6 +23,7 @@ import {
   ApexResponsive,
   NgApexchartsModule,
 } from 'ng-apexcharts';
+import {NotifierModule} from "angular-notifier";
 
 interface month {
   value: string;
@@ -148,6 +149,7 @@ const ELEMENT_DATA: productsData[] = [
     NgApexchartsModule,
     MatTableModule,
     CommonModule,
+    NotifierModule,
   ],
 })
 export class AppDashboardComponent {

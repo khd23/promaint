@@ -22,8 +22,8 @@ export class AppService {
         const events = [
             <CalendarSchedulerEvent>{
                 id: '1',
-                start: addDays(startOfHour(new Date()), 1),
-                end: addDays(addHours(startOfHour(new Date()), 1), 1),
+                start: addHours(addDays(startOfHour(setHours(new Date(), 8)), 2), 1),
+                end: addHours(addDays(startOfHour(setHours(new Date(), 8)), 2), 2),
                 title: 'V021',
                 content: 'Ahmed Saadaoui',
                 color: { primary: '#E0E0E0', secondary: '#EEEEEE' },
@@ -38,8 +38,8 @@ export class AppService {
                 }
             },  <CalendarSchedulerEvent>{
                 id: '52',
-                start: addHours(addDays(startOfHour(setHours(new Date(), 6)), 2), 1),
-                end: addHours(addDays(startOfHour(setHours(new Date(), 6)), 2), 2),
+                start: addHours(addDays(startOfHour(setHours(new Date(), 9)), 2), 1),
+                end: addHours(addDays(startOfHour(setHours(new Date(), 9)), 2), 2),
                 title: 'E001',
                 content: 'Adel Drihmi',
                 color: { primary: '#E0E0E0', secondary: '#EEEEEE' },

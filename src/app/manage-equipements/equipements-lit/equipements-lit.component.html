@@ -113,16 +113,16 @@
                   <i-tabler name="dots" class="icon-20"></i-tabler>
                 </mat-icon>
               </button>
-              <mat-menu #menu="matMenu" class="cardWithShadow">
-                <button mat-menu-item>Demande de réparation</button>
-                <button mat-menu-item>Emettre un bon de travail</button>
-                <button mat-menu-item>Ajouter depenses</button>
-                <button mat-menu-item>Ajouter consommation</button>
-                <button mat-menu-item>Inspection</button>
-                <button mat-menu-item>Configuration des tâches</button>
-                <button mat-menu-item>Historique</button>
-                <button mat-menu-item>Modifier</button>
-                <button mat-menu-item>Supprimer</button>
+              <mat-menu #menu="matMenu" class="cardWithShadow" xPosition="before">
+                <button mat-menu-item> <mat-icon matListItemIcon>settings_applications</mat-icon>Demande de réparation</button>
+                <button mat-menu-item><mat-icon matListItemIcon>settings</mat-icon>Emettre un bon de travail</button>
+                <button mat-menu-item><mat-icon matListItemIcon>library_add</mat-icon>Ajouter depenses</button>
+                <button mat-menu-item><mat-icon matListItemIcon>playlist_add</mat-icon>Ajouter consommation</button>
+                <button mat-menu-item><mat-icon matListItemIcon>zoom_in</mat-icon>Inspection</button>
+                <button mat-menu-item><mat-icon matListItemIcon>work_outline</mat-icon>Configuration des tâches</button>
+                <button mat-menu-item><mat-icon matListItemIcon>history</mat-icon>Historique</button>
+                <button mat-menu-item><mat-icon matListItemIcon>edit</mat-icon>Modifier</button>
+                <button mat-menu-item><mat-icon matListItemIcon>delete</mat-icon>Supprimer</button>
 
               </mat-menu>
           </td>
