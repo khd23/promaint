@@ -4,6 +4,8 @@ import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition}
 import {Router} from "@angular/router";
 import {Employee} from "../../models/employee";
 import {EmployeeService} from "../../services/employee.service";
+import {ROLES} from "../../consts/roles";
+import {STATUS} from "../../consts/status";
 @Component({
   selector: 'app-add-employee',
   templateUrl: './add-employee.component.html',
@@ -16,6 +18,8 @@ export class AddEmployeeComponent {
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   employee! : Employee
   error: any;
+  roles= ROLES;
+  status= STATUS;
   constructor( public employeeService: EmployeeService, private router: Router,private _snackBar: MatSnackBar){}
 
   ngOnInit(): void {
@@ -31,6 +35,7 @@ export class AddEmployeeComponent {
       laborRate:new FormControl('', [Validators.required]),
       allowWorkOrder:new FormControl('', [Validators.required]),
       allowLogin:new FormControl('', [Validators.required]),
+      type:new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required,Validators.pattern(
         /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&^_-]).{8,}/)]),
 

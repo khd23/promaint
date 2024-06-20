@@ -64,6 +64,7 @@ import {MatPaginatorIntl} from "@angular/material/paginator";
 import {CustomPaginator} from "./configurations/CustomPaginatorConfiguration";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import { ViewEmployeeComponent } from './manage-employees/view-employee/view-employee.component';
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
 export function momentAdapterFactory() {
@@ -103,7 +104,8 @@ export function httpLoaderFactory(http:HttpClient) {
     VendorsListComponent,
     AddEmployeeComponent,
     DeleteModalComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ViewEmployeeComponent
 
   ],
   exports: [TablerIconsModule],

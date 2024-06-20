@@ -1,0 +1,74 @@
+<mat-card class="w-100">
+  <mat-card-header>
+    <h4 class="mb-56">{{"employee.view" | translate}}</h4>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="card">
+      <div class="card-body">
+        <form class="form-content" >
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"employee.firstName" | translate}}</mat-label>
+            <input matInput type="text" value="{{employee.firstName}}" readonly>
+          </mat-form-field>
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"employee.lastName" | translate}}</mat-label>
+            <input matInput type="text"  value="{{employee.lastName}}" readonly>
+          </mat-form-field>
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"employee.email" | translate}}</mat-label>
+            <input matInput type="email"  value="{{employee.email}}" readonly>
+          </mat-form-field>
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"employee.phoneNumber" | translate}}</mat-label>
+            <input matInput type="text"  value="{{employee.phoneNumber}}" readonly>
+          </mat-form-field>
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>Type</mat-label>
+            <input matInput type="text"  value="{{employee.type}}" readonly>
+          </mat-form-field>
+
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"employee.status" | translate}}</mat-label>
+            <input matInput type="text"  value="{{employee.status}}" readonly>
+          </mat-form-field>
+
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"employee.drivingLicense" | translate}}</mat-label>
+            <input matInput type="number" value="{{employee.drivingLicense}}" readonly>
+          </mat-form-field>
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"employee.laborRate" | translate}}</mat-label>
+            <input matInput type="number" value="{{employee.laborRate}}" readonly>
+            <mat-icon matSuffix>attach_money</mat-icon>
+          </mat-form-field>
+
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"employee.userName" | translate}}</mat-label>
+            <input matInput type="text" placeholder="UserName" value="{{employee.userName}}" readonly>
+          </mat-form-field>
+
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"employee.allowWorkOrder" | translate}}</mat-label>
+            <input matInput type="text" value="{{ employee.allowWorkOrder.toString() | translate}}" readonly>
+          </mat-form-field>
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"employee.allowLogin" | translate}}</mat-label>
+            <input matInput type="text" value="{{ employee.allowLogin.toString() | translate}}" readonly>
+          </mat-form-field>
+
+        </form>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+

@@ -1,5 +1,14 @@
 {
-  "submit": "soumettre",
+  "submit": "Soumettre",
+  "true": "Oui",
+  "false": "Non",
+  "add": "Ajouter",
+  "search": "Rechercher Ici",
+  "edit": "Modifier",
+  "delete": "Supprimer",
+  "changePwd": "Changer mot de passe",
+  "deleteConfirm": "Confirmation de suppression",
+  "deleteMessage": "Souhaitez-vous supprimer",
   "required": "Ce champ est obligatoire",
   "password-validation": "Le mot de passe doit être composé d’au moins 8 caractères, des caractères appartenant aux catégories\n          suivantes :\n          lettres majuscules A-Z (alphabet romain), lettres minuscules A-Z (alphabet romain) ,chiffres de 0 à 9\n          ,caractères spéciaux (!, $, #, %, etc.)",
   "phone-validation": "Numero de telephone invalide",
@@ -16,17 +25,29 @@
     "english": "Anglais"
   },
   "employee": {
+    "employee-list": "Liste des employés",
     "title": "Ajouter Employe",
     "firstName": "Prenom",
     "lastName": "Nom",
     "email": "Email",
     "phoneNumber": "Numero de telephone",
-    "userName": "Etat",
+    "userName": "Nom d'utilisateur",
     "status": "Etat",
     "drivingLicense": "Permis de conduire",
     "laborRate": "Taux de la main-d'œuvre",
     "allowWorkOrder": "Autoriser l'ordre de travail",
     "allowLogin": "Autoriser la connexion",
-    "password": "Mot de passe"
+    "password": "Mot de passe",
+    "view": "Détails de l'employé"
+  },
+  "roles": {
+    "manager": "Manager",
+    "technician": "Technicien",
+    "driver": "Chauffeur"
+  },
+  "status": {
+    "active": "ACTIF",
+    "inactive": "INACTIF",
+    "requestor": "DEMANDEUR"
   }
 }

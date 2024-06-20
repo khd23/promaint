@@ -1,17 +1,18 @@
+export interface Employee {
 
-export interface Employee{
+  id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  userName: string;
+  password: string;
+  status: string;
+  drivingLicense: number;
+  laborRate: number;
+  allowWorkOrder: boolean;
+  allowLogin: boolean;
+  type: string;
 
-    id: number;
-    firstName: string;
-    lastName: string;
-    email: string;
-    phoneNumber: string;
-    userName:string;
-    password:string;
-   status: string;
-   drivingLicense:number;
-   laborRate:number;
-   allowWorkOrder:boolean;
-   allowLogin:boolean;
 
 }

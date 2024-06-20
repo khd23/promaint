@@ -15,6 +15,7 @@ import {EmployeesListComponent} from "./manage-employees/employees-list/employee
 import {AddEmployeeComponent} from "./manage-employees/add-employee/add-employee.component";
 import {authGuard} from "./helpers/auth.guard";
 import {AppSideLoginComponent} from "./pages/authentication/login/login.component";
+import {ViewEmployeeComponent} from "./manage-employees/view-employee/view-employee.component";
 
 const routes: Routes = [
   {
@@ -109,6 +110,11 @@ const routes: Routes = [
         data: {
           title: 'Ajouter Employe'
         }
+      },
+      {
+        path: 'view-employee/:id',
+        component: ViewEmployeeComponent,
+        canActivate:[authGuard]
       },
       {
         path: 'calendar',
