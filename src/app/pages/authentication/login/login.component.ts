@@ -7,6 +7,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {AuthService} from "../../../services/auth.service";
 import {ForgotPasswordComponent} from "../../../modals/forgot-password/forgot-password.component";
 import {UserService} from "../../../services/user.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-login',
@@ -30,6 +31,7 @@ export class AppSideLoginComponent {
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required]]
+
     });
   }
 

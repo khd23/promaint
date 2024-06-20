@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import {Equipement} from "../../../manage-equipements/equipements-lit/equipements-lit.component";
+import {TranslateService} from "@ngx-translate/core";
 
 export interface Message{
   icon:string,
@@ -44,9 +45,23 @@ export class HeaderComponent {
   isBadgeHidden=false;
   showFiller = false;
   messages= ELEMENT_DATA;
+  currentLanguage!:string
 
-  constructor(public dialog: MatDialog) {}
-  // changeLanguage(language: string) {
-  //   this.translateService.use(language);
-  // }
+
+  constructor(public dialog: MatDialog, private translateService: TranslateService) {}
+  ngOnInit(): void {
+    this.getCurrentLanguage();
+
+  }
+  changeLanguage(language: string) {
+    this.translateService.use(language);
+    this.getCurrentLanguage();
+  }
+
+
+    getCurrentLanguage(){
+      this.translateService.currentLang==="en"? this.currentLanguage="english" : this.currentLanguage="french";
+      console.log(this.currentLanguage)
+    }
+
 }

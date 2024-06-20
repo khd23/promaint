@@ -20,6 +20,8 @@
     "@angular/platform-browser": "^16.0.1",
     "@angular/platform-browser-dynamic": "^16.0.1",
     "@angular/router": "^16.0.1",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
     "@syncfusion/ej2-material-theme": "~24.1.41",
     "angular-calendar": "^0.31.0",
     "angular-calendar-scheduler": "^16.0.0",

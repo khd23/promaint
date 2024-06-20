@@ -31,8 +31,20 @@
     <i-tabler class="d-flex" name="bell" matBadge="6" matBadgeColor="primary" [matBadgeHidden]="isBadgeHidden"></i-tabler>
 
   </button>
-<!--  <button (click)="changeLanguage('fr')">Français</button>-->
-<!--  <button (click)="changeLanguage('es')">Español</button>-->
+
+      <button
+        mat-flat-button
+        color="primary"
+        class="m-t-8"
+        [matMenuTriggerFor]="menu"
+      >
+        {{"header."+ currentLanguage | translate}}
+      </button>
+      <mat-menu #menu="matMenu" class="cardWithShadow">
+        <button mat-menu-item (click)="changeLanguage('fr')">{{"header.french" | translate}}</button>
+        <button mat-menu-item (click)="changeLanguage('en')">{{"header.english" | translate}}</button>
+      </mat-menu>
+
   <mat-menu #menu="matMenu" class="cardWithShadow" >
     <mat-list>
       <mat-list-item *ngFor="let message of messages">

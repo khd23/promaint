@@ -1,7 +1,7 @@
 import {LOCALE_ID, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule, provideHttpClient} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -62,10 +62,16 @@ import {ForgotPasswordComponent} from "./modals/forgot-password/forgot-password.
 import {TokenInterceptor} from "./helpers/token.interceptor";
 import {MatPaginatorIntl} from "@angular/material/paginator";
 import {CustomPaginator} from "./configurations/CustomPaginatorConfiguration";
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
 export function momentAdapterFactory() {
   return adapterFactory(moment);
+};
+
+export function httpLoaderFactory(http:HttpClient) {
+  return new TranslateHttpLoader(http,'./assets/i18n/','.json');
 };
 
 // @ts-ignore
@@ -120,6 +126,13 @@ export function momentAdapterFactory() {
     NotifierModule.withConfig(customNotifierOptions),
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: momentAdapterFactory }),
     SchedulerModule.forRoot({locale: 'fr', headerDateFormat: 'daysRange'}),
+    TranslateModule.forRoot({
+      loader:{
+         provide:TranslateLoader,
+        useFactory: httpLoaderFactory,
+        deps:[HttpClient]
+      }
+    })
 
   ],
   providers: [

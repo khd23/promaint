@@ -1,0 +1,33 @@
+{
+  "submit": "submit",
+  "required": "This field is required",
+  "password-validation": "The password must be composed of at least 8 characters, characters belonging to the following categories:\\n uppercase letters A-Z (Roman alphabet), lowercase letters A-Z (Roman alphabet), digits of 0 to 9\\n, special characters (!, $, #, %, etc.)Le mot de passe doit être composé d’au moins 8 caractères, des caractères appartenant aux catégories\n          suivantes :\n          lettres majuscules A-Z (alphabet romain), lettres minuscules A-Z (alphabet romain) ,chiffres de 0 à 9\n          ,caractères spéciaux (!, $, #, %, etc.)",
+  "phone-validation": "Invalid phone number",
+  "email-validation": "Invalid Email",
+  "loginPage": {
+    "username": "Username",
+    "password": "Password",
+    "forgotPassword": "Forgot Password ?",
+    "create-account":"Create an account",
+    "new": "New to ProMaint?"
+  },
+  "header": {
+    "french": "French",
+    "english": "English"
+  },
+  "employee": {
+    "title": "Add Employee",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phoneNumber": "Phone Number",
+    "userName": "UserName",
+    "status": "Status",
+    "drivingLicense": "Driving License",
+    "laborRate": "Labor Rate",
+    "allowWorkOrder": "Allow Work Order",
+    "allowLogin": "Allow Login",
+    "password": "Password"
+
+  }
+}

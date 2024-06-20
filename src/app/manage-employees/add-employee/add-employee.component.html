@@ -1,40 +1,40 @@
 <mat-card class="w-100">
   <mat-card-header>
-    <h4 class="mb-56">Ajouter Employe</h4>
+    <h4 class="mb-56">{{"employee.title" | translate}}</h4>
   </mat-card-header>
   <mat-card-content>
 <div class="card">
   <div class="card-body">
     <form class="form-content" [formGroup]="form" (ngSubmit)="submit()">
       <mat-form-field class="w-100 fs-16" appearance="outline">
-        <mat-label>Prenom</mat-label>
+        <mat-label>{{"employee.firstName" | translate}}</mat-label>
         <input matInput type="text" placeholder="Nom" formControlName="firstName">
       </mat-form-field>
       <div *ngIf="f['firstName'].touched && f['firstName'].invalid" class="alert alert-danger">
-        <div *ngIf="f['firstName'].errors && f['firstName'].errors?.['required']">Ce champ est obligatoire</div>
+        <div *ngIf="f['firstName'].errors && f['firstName'].errors?.['required']">{{"required" | translate}}</div>
       </div>
       <mat-form-field class="w-100 fs-16" appearance="outline">
-        <mat-label>Nom</mat-label>
-        <input matInput type="text" placeholder="Prenom" formControlName="lastName">
+        <mat-label>{{"employee.lastName" | translate}}</mat-label>
+        <input matInput type="text" placeholder="Nom" formControlName="lastName">
       </mat-form-field>
       <div *ngIf="f['lastName'].touched && f['lastName'].invalid" class="alert alert-danger">
-        <div *ngIf="f['lastName'].errors && f['lastName'].errors?.['required']">Ce champ est obligatoire</div>
+        <div *ngIf="f['lastName'].errors && f['lastName'].errors?.['required']">{{"required" | translate}}</div>
       </div>
       <mat-form-field class="w-100 fs-16" appearance="outline">
-        <mat-label>Email</mat-label>
+        <mat-label>{{"employee.email" | translate}}</mat-label>
         <input matInput type="email" placeholder="Email" formControlName="email">
       </mat-form-field>
       <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
-        <div *ngIf="f['email'].errors && f['email'].errors?.['required']">Ce champ est obligatoire</div>
-        <div *ngIf="f['email'].errors && f['email'].errors?.['email']">Email invalide</div>
+        <div *ngIf="f['email'].errors && f['email'].errors?.['required']">{{"required" | translate}}</div>
+        <div *ngIf="f['email'].errors && f['email'].errors?.['email']"> {{"email-validation" | translate}}</div>
       </div>
       <mat-form-field class="w-100 fs-16" appearance="outline">
-        <mat-label>Numero de telephone</mat-label>
+        <mat-label>{{"employee.phoneNumber" | translate}}</mat-label>
         <input matInput type="text" placeholder="Numero de telephone" formControlName="phoneNumber">
       </mat-form-field>
       <div *ngIf="f['phoneNumber'].touched && f['phoneNumber'].invalid" class="alert alert-danger">
-        <div *ngIf="f['phoneNumber'].errors && f['phoneNumber'].errors?.['required']">Ce champ est obligatoire</div>
-        <div *ngIf="f['phoneNumber'].errors && f['phoneNumber'].errors?.['pattern']">Numero de telephone invalide
+        <div *ngIf="f['phoneNumber'].errors && f['phoneNumber'].errors?.['required']">{{"required" | translate}}</div>
+        <div *ngIf="f['phoneNumber'].errors && f['phoneNumber'].errors?.['pattern']"> {{"phone-validation" | translate}}
         </div>
       </div>
       <mat-form-field class="w-100 fs-16" appearance="outline">
@@ -42,65 +42,64 @@
         <input matInput type="text" placeholder="Nom" formControlName="status">
       </mat-form-field>
       <div *ngIf="f['status'].touched && f['status'].invalid" class="alert alert-danger">
-        <div *ngIf="f['status'].errors && f['status'].errors?.['required']">Ce champ est obligatoire</div>
+        <div *ngIf="f['status'].errors && f['status'].errors?.['required']">{{"required" | translate}}</div>
       </div>
       <mat-form-field class="w-100 fs-16" appearance="outline">
-        <mat-label>Etat</mat-label>
+        <mat-label>{{"employee.status" | translate}}</mat-label>
         <input matInput type="text" placeholder="Nom" formControlName="status">
       </mat-form-field>
       <div *ngIf="f['status'].touched && f['status'].invalid" class="alert alert-danger">
-        <div *ngIf="f['status'].errors && f['status'].errors?.['required']">Ce champ est obligatoire</div>
+        <div *ngIf="f['status'].errors && f['status'].errors?.['required']">{{"required" | translate}}</div>
       </div>
       <mat-form-field class="w-100 fs-16" appearance="outline">
-        <mat-label>Permis de conduire</mat-label>
+        <mat-label>{{"employee.drivingLicense" | translate}}</mat-label>
         <input matInput type="text" placeholder="Nom" formControlName="drivingLicense">
       </mat-form-field>
       <div *ngIf="f['drivingLicense'].touched && f['drivingLicense'].invalid" class="alert alert-danger">
-        <div *ngIf="f['drivingLicense'].errors && f['drivingLicense'].errors?.['required']">Ce champ est obligatoire</div>
+        <div *ngIf="f['drivingLicense'].errors && f['drivingLicense'].errors?.['required']">{{"required" | translate}}</div>
       </div>
       <mat-form-field class="w-100 fs-16" appearance="outline">
-        <mat-label>Taux de la main-d'œuvre</mat-label>
+        <mat-label>{{"employee.laborRate" | translate}}</mat-label>
         <input matInput type="text" placeholder="Nom" formControlName="laborRate">
       </mat-form-field>
       <div *ngIf="f['laborRate'].touched && f['laborRate'].invalid" class="alert alert-danger">
-        <div *ngIf="f['laborRate'].errors && f['laborRate'].errors?.['required']">Ce champ est obligatoire</div>
+        <div *ngIf="f['laborRate'].errors && f['laborRate'].errors?.['required']">{{"required" | translate}}</div>
       </div>
       <mat-form-field class="w-100 fs-16" appearance="outline">
-        <mat-label>Autoriser l'ordre de travail</mat-label>
+        <mat-label>{{"employee.allowWorkOrder" | translate}}</mat-label>
         <input matInput type="text" placeholder="Nom" formControlName="allowWorkOrder">
       </mat-form-field>
       <div *ngIf="f['allowWorkOrder'].touched && f['allowWorkOrder'].invalid" class="alert alert-danger">
-        <div *ngIf="f['allowWorkOrder'].errors && f['allowWorkOrder'].errors?.['required']">Ce champ est obligatoire</div>
+        <div *ngIf="f['allowWorkOrder'].errors && f['allowWorkOrder'].errors?.['required']">{{"required" | translate}}</div>
       </div>
       <mat-form-field class="w-100 fs-16" appearance="outline">
-        <mat-label>Autoriser la connexion</mat-label>
+        <mat-label>{{"employee.allowLogin" | translate}}</mat-label>
         <input matInput type="text" placeholder="Nom" formControlName="allowLogin">
       </mat-form-field>
       <div *ngIf="f['allowLogin'].touched && f['allowLogin'].invalid" class="alert alert-danger">
-        <div *ngIf="f['allowLogin'].errors && f['allowLogin'].errors?.['required']">Ce champ est obligatoire</div>
+        <div *ngIf="f['allowLogin'].errors && f['allowLogin'].errors?.['required']">{{"required" | translate}}</div>
       </div>
 
       <mat-form-field class="w-100 fs-16" appearance="outline">
-        <mat-label>UserName</mat-label>
+        <mat-label>{{"employee.userName" | translate}}</mat-label>
         <input matInput type="text" placeholder="UserName" formControlName="userName">
       </mat-form-field>
       <div *ngIf="f['userName'].touched && f['userName'].invalid" class="alert alert-danger">
-        <div *ngIf="f['userName'].errors && f['userName'].errors?.['required']">Ce champ est obligatoire</div>
+        <div *ngIf="f['userName'].errors && f['userName'].errors?.['required']">{{"required" | translate}}</div>
       </div>
       <mat-form-field class="w-100 fs-16" appearance="outline">
-        <mat-label>Mot de passe</mat-label>
+        <mat-label>{{"employee.password" | translate}}</mat-label>
         <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password">
         <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </mat-form-field>
       <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
-        <div *ngIf="f['password'].errors && f['password'].errors?.['required']">Ce champ est obligatoire</div>
+        <div *ngIf="f['password'].errors && f['password'].errors?.['required']">{{"required" | translate}}</div>
         <div *ngIf="f['password'].errors && f['password'].errors?.['pattern']" style="font-size: xx-small">
-          Le mot de passe doit être composé d’au moins 8 caractères, des caractères appartenant aux catégories
-          suivantes :
-          lettres majuscules A-Z (alphabet romain), lettres minuscules A-Z (alphabet romain) ,chiffres de 0 à 9
-          ,caractères spéciaux (!, $, #, %, etc.)
+          {{"password-validation" | translate}}
         </div>
+
       </div>
+      <button mat-raised-button color="warn">{{"submit" | translate}}</button>
     </form>
   </div>
 </div>

@@ -52,14 +52,14 @@
 
           <form class="m-t-30" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block"
-              >Username</mat-label
+              >{{"loginPage.username" | translate}}</mat-label
             >
             <mat-form-field appearance="outline" class="w-100" color="primary">
               <input matInput formControlName="username" required />
             </mat-form-field>
             <!-- password -->
             <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block"
-              >Password</mat-label
+              >{{"loginPage.password" | translate}}</mat-label
             >
             <mat-form-field appearance="outline" class="w-100" color="primary">
               <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required />
@@ -67,11 +67,11 @@
             </mat-form-field>
             <mat-error *ngIf="error"  class="alert alert-danger"> {{error}} </mat-error>
             <div class="d-flex align-items-center m-b-12">
-              <mat-checkbox color="primary">Remember this Device</mat-checkbox>
+<!--              <mat-checkbox color="primary">Remember this Device</mat-checkbox>-->
               <a
                 (click)="openDialog()"
                 class="text-primary f-w-600 text-decoration-none m-l-auto f-s-14"
-                >Forgot Password ?</a
+                >{{"loginPage.forgotPassword" | translate}}</a
               >
             </div>
             <button mat-flat-button color="primary" class="w-100">Login</button>
@@ -81,12 +81,12 @@
             <!-- input -->
           </form>
           <span class="d-block f-w-500 text-center m-t-24"
-            >New to Spike?
+            >{{"loginPage.new" | translate}}
             <a
               [routerLink]="['/authentication/register']"
               class="text-decoration-none text-primary f-w-500 f-s-14"
             >
-              Create an account</a
+              {{"loginPage.create-account" | translate}}</a
             >
           </span>
         </mat-card-content>

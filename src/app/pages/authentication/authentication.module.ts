@@ -16,20 +16,22 @@ import { AuthenticationRoutes } from './authentication.routing';
 
 import { AppSideLoginComponent } from './login/login.component';
 import { AppSideRegisterComponent } from './register/register.component';
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(AuthenticationRoutes),
-    MatIconModule,
-    MatCardModule,
-    MatInputModule,
-    MatCheckboxModule,
-    MatButtonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    TablerIconsModule.pick(TablerIcons),
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(AuthenticationRoutes),
+        MatIconModule,
+        MatCardModule,
+        MatInputModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        TablerIconsModule.pick(TablerIcons),
+        TranslateModule,
+    ],
   declarations: [
     AppSideLoginComponent,
     AppSideRegisterComponent,
