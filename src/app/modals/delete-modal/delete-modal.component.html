@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Confirmation de suppression</h1>
+<div mat-dialog-content>
+  Souhaitez-vous supprimer {{data.name}} ?
+</div>
+<div mat-dialog-actions class="button-row d-flex flex-wrap mb-24">
+  <button mat-raised-button class="me-8 mb-8" color="primary" [mat-dialog-close]="data" cdkFocusInitial (click)="data.deleteFunction()">Oui</button>
+  <button mat-raised-button class="me-8 mb-8" color="warn" (click)="onNoClick()">Non</button>
+</div>

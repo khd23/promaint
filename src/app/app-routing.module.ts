@@ -12,6 +12,9 @@ import {PurcahsingListComponent} from "./manage-purchasing/purcahsing-list/purca
 import {InvocesListComponent} from "./manage-invoces/invoces-list/invoces-list.component";
 import {VendorsListComponent} from "./manage-vendors/vendors-list/vendors-list.component";
 import {EmployeesListComponent} from "./manage-employees/employees-list/employees-list.component";
+import {AddEmployeeComponent} from "./manage-employees/add-employee/add-employee.component";
+import {authGuard} from "./helpers/auth.guard";
+import {AppSideLoginComponent} from "./pages/authentication/login/login.component";
 
 const routes: Routes = [
   {
@@ -27,6 +30,7 @@ const routes: Routes = [
       {
         path: 'equipements-list',
         component: EquipementsLitComponent,
+        canActivate:[authGuard],
         data: {
           title: 'Liste des équipements'
         }
@@ -34,6 +38,7 @@ const routes: Routes = [
       {
         path: 'maintenances-list',
         component: MaintenanceListComponent,
+        canActivate:[authGuard],
         data: {
           title: 'Ordres de travail'
         }
@@ -41,6 +46,7 @@ const routes: Routes = [
       {
         path: 'add-maintenance',
         component: AddMaintenanceComponent,
+        canActivate:[authGuard],
         data: {
           title: 'Ajouter Ordre de travail'
         }
@@ -48,6 +54,7 @@ const routes: Routes = [
       {
         path: 'add-equipement',
         component: AddEquipemntComponent,
+        canActivate:[authGuard],
         data: {
           title: 'Ajouter équipement'
         },
@@ -55,6 +62,7 @@ const routes: Routes = [
       {
         path: 'inventory-list',
         component: InventoryListComponent,
+        canActivate:[authGuard],
         data: {
           title: 'Inventaires'
         }
@@ -63,6 +71,7 @@ const routes: Routes = [
       {
         path: 'purchasing-list',
         component: PurcahsingListComponent,
+        canActivate:[authGuard],
         data: {
           title: 'Liste des achats'
         }
@@ -70,6 +79,7 @@ const routes: Routes = [
       {
         path: 'invoces-list',
         component: InvocesListComponent,
+        canActivate:[authGuard],
         data: {
           title: 'Factures'
         }
@@ -77,6 +87,7 @@ const routes: Routes = [
       {
         path: 'vendors-list',
         component: VendorsListComponent,
+        canActivate:[authGuard],
         data: {
           title: 'Vendeurs'
         }
@@ -84,19 +95,32 @@ const routes: Routes = [
       {
         path: 'employees-list',
         component: EmployeesListComponent,
+
+        canActivate:[authGuard],
         data: {
           title: 'Employes'
+        }
+
+      },
+      {
+        path: 'add-employee',
+        component: AddEmployeeComponent,
+        canActivate:[authGuard],
+        data: {
+          title: 'Ajouter Employe'
         }
       },
       {
         path: 'calendar',
         component: CalendarComponent,
+        canActivate:[authGuard],
         data: {
           title: 'Calendrier'
         }
       },
       {
         path: 'dashboard',
+        canActivate:[authGuard],
         loadChildren: () =>
           import('./pages/pages.module').then((m) => m.PagesModule),
       },
@@ -113,6 +137,13 @@ const routes: Routes = [
           import('./pages/extra/extra.module').then((m) => m.ExtraModule),
       },
     ],
+  },
+  {
+    path: 'login',
+    component: AppSideLoginComponent,
+    data: {
+      title: 'Login'
+    }
   },
   {
     path: '',

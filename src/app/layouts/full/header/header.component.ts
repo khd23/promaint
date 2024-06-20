@@ -46,4 +46,7 @@ export class HeaderComponent {
   messages= ELEMENT_DATA;
 
   constructor(public dialog: MatDialog) {}
+  // changeLanguage(language: string) {
+  //   this.translateService.use(language);
+  // }
 }

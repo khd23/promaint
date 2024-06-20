@@ -1,7 +1,7 @@
 import {LOCALE_ID, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -56,6 +56,12 @@ import { PurcahsingListComponent } from './manage-purchasing/purcahsing-list/pur
 import { VendorsListComponent } from './manage-vendors/vendors-list/vendors-list.component';
 import {AppService} from "./services/app.service";
 import {customNotifierOptions} from "./configurations/customNotifierOptions";
+import {AddEmployeeComponent} from "./manage-employees/add-employee/add-employee.component";
+import {DeleteModalComponent} from "./modals/delete-modal/delete-modal.component";
+import {ForgotPasswordComponent} from "./modals/forgot-password/forgot-password.component";
+import {TokenInterceptor} from "./helpers/token.interceptor";
+import {MatPaginatorIntl} from "@angular/material/paginator";
+import {CustomPaginator} from "./configurations/CustomPaginatorConfiguration";
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
 export function momentAdapterFactory() {
@@ -89,6 +95,10 @@ export function momentAdapterFactory() {
     EmployeesListComponent,
     PurcahsingListComponent,
     VendorsListComponent,
+    AddEmployeeComponent,
+    DeleteModalComponent,
+    ForgotPasswordComponent
+
   ],
   exports: [TablerIconsModule],
   imports: [
@@ -115,7 +125,10 @@ export function momentAdapterFactory() {
   providers: [
     AppService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
-    {provide: MOMENT, useValue: moment}
+    {provide: MOMENT, useValue: moment},
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    { provide: MatPaginatorIntl, useValue: CustomPaginator() },
+    [{ provide: LOCALE_ID, useValue: 'en-US' }],
   ],
 })
 export class AppModule {}
