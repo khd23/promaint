@@ -16,6 +16,8 @@ import {AddEmployeeComponent} from "./manage-employees/add-employee/add-employee
 import {authGuard} from "./helpers/auth.guard";
 import {AppSideLoginComponent} from "./pages/authentication/login/login.component";
 import {ViewEmployeeComponent} from "./manage-employees/view-employee/view-employee.component";
+import {EditEmployeeComponent} from "./manage-employees/edit-employee/edit-employee.component";
+import {ChangePwdEmployeeComponent} from "./manage-employees/change-pwd-employee/change-pwd-employee.component";
 
 const routes: Routes = [
   {
@@ -114,6 +116,16 @@ const routes: Routes = [
       {
         path: 'view-employee/:id',
         component: ViewEmployeeComponent,
+        canActivate:[authGuard]
+      },
+      {
+        path: 'edit-employee/:id',
+        component: EditEmployeeComponent,
+        canActivate:[authGuard]
+      },
+      {
+        path: 'change-pwd-employee/:id',
+        component: ChangePwdEmployeeComponent,
         canActivate:[authGuard]
       },
       {

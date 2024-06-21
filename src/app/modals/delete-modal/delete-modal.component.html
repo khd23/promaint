@@ -3,6 +3,6 @@
   {{"deleteMessage" | translate}} {{data.name}} ?
 </div>
 <div mat-dialog-actions class="button-row d-flex flex-wrap mb-24">
-  <button mat-raised-button class="me-8 mb-8" color="primary" [mat-dialog-close]="data" cdkFocusInitial (click)="data.deleteFunction()">{{"yes" | translate}}</button>
-  <button mat-raised-button class="me-8 mb-8" color="warn" (click)="onNoClick()">{{"no" | translate}}</button>
+  <button mat-raised-button class="me-8 mb-8" color="primary" [mat-dialog-close]="data" cdkFocusInitial (click)="data.deleteFunction()">{{"true" | translate}}</button>
+  <button mat-raised-button class="me-8 mb-8" color="warn" (click)="onNoClick()">{{"false" | translate}}</button>
 </div>

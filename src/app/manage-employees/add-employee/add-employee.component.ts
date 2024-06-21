@@ -6,6 +6,7 @@ import {Employee} from "../../models/employee";
 import {EmployeeService} from "../../services/employee.service";
 import {ROLES} from "../../consts/roles";
 import {STATUS} from "../../consts/status";
+import {TranslateService} from "@ngx-translate/core";
 @Component({
   selector: 'app-add-employee',
   templateUrl: './add-employee.component.html',
@@ -20,7 +21,11 @@ export class AddEmployeeComponent {
   error: any;
   roles= ROLES;
   status= STATUS;
-  constructor( public employeeService: EmployeeService, private router: Router,private _snackBar: MatSnackBar){}
+  allowLogin: boolean=false;
+  successMessage:string='';
+
+  constructor( public employeeService: EmployeeService, private router: Router,
+               private _snackBar: MatSnackBar, private translateService: TranslateService){}
 
   ngOnInit(): void {
 
@@ -52,12 +57,13 @@ export class AddEmployeeComponent {
    */
   submit(){
     console.log(this.form.value);
+    this.translateService.currentLang==="en"? this.successMessage="Registered successfully!" : this.successMessage="Enregistré avec succès !";
     this.employee= this.form.value;
     this.employeeService.create(this.employee)
       .subscribe(
         data => {
           console.log(data)
-          this._snackBar.open("Enregistré avec succès !", 'ok', {
+          this._snackBar.open(this.successMessage, 'ok', {
             horizontalPosition: this.horizontalPosition,
             verticalPosition: this.verticalPosition,
             duration: 5000

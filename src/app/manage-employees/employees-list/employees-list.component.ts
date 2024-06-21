@@ -19,11 +19,12 @@ export class EmployeesListComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  displayedColumns: string[] = ['id','name', 'type', 'driverLiscence','email','actions'];
+  displayedColumns: string[] = ['id','firstName','lastName', 'type', 'driverLiscence','email','actions'];
   dataSource!:  MatTableDataSource<Employee>;
   animal: string="";
   name: string="";
   search: boolean = false;
+  tableLength: number = 0;
   constructor(public dialog: MatDialog , public employeeService: EmployeeService, ) {}
   ngOnInit(): void {
     this.refresh();
@@ -34,6 +35,7 @@ export class EmployeesListComponent {
         this.dataSource = new MatTableDataSource(data);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+        this.tableLength = this.dataSource.data.length
       })
   }
   openDialog(name: string, elem: Employee): void {

@@ -1,0 +1,60 @@
+<mat-card class="w-100">
+  <mat-card-header>
+    <h4 class="mb-56">{{"employee.title" | translate}}</h4>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="card">
+      <div class="card-body">
+        <form class="form-content" [formGroup]="form" (ngSubmit)="submit()">
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"oldPwd" | translate}}</mat-label>
+            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="ancientPassword">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </mat-form-field>
+          <mat-error *ngIf="f['ancientPassword'].touched && f['ancientPassword'].invalid" class="alert alert-danger">
+            <mat-error *ngIf="f['ancientPassword'].errors && f['ancientPassword'].errors?.['pattern']" style="font-size: xx-small">
+              {{"password-validation" | translate}}
+            </mat-error>
+          </mat-error>
+
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"newPwd" | translate}}</mat-label>
+            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="newPassword">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </mat-form-field>
+          <mat-error *ngIf="f['newPassword'].touched && f['newPassword'].invalid" class="alert alert-danger">
+            <mat-error *ngIf="f['newPassword'].errors && f['newPassword'].errors?.['pattern']" style="font-size: xx-small">
+              {{"password-validation" | translate}}
+            </mat-error>
+          </mat-error>
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"confirmPwd" | translate}}</mat-label>
+            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="confirmPassword">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </mat-form-field>
+          <mat-error *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid" class="alert alert-danger">
+            <mat-error *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors?.['pattern']" style="font-size: xx-small">
+              {{"password-validation" | translate}}
+            </mat-error>
+          </mat-error>
+          <mat-error class="alert alert-danger" *ngIf="f['confirmPassword'].touched && form?.errors?.['passwordNoMatch']">{{"pwdMatches" | translate}}</mat-error>
+
+
+
+          <mat-error *ngIf="error" class="alert alert-danger"> {{error | translate}} </mat-error>
+          <div class="button-row d-flex flex-wrap mb-24">
+            <button mat-raised-button class="me-8 mb-8" color="primary" style="margin-right: 20px;"
+            >{{"submit" | translate}}
+            </button>
+            <button mat-raised-button class="me-8 mb-8" color="warn"
+                    (click)="cancel()">{{"cancel" | translate}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+

@@ -61,10 +61,12 @@ import {DeleteModalComponent} from "./modals/delete-modal/delete-modal.component
 import {ForgotPasswordComponent} from "./modals/forgot-password/forgot-password.component";
 import {TokenInterceptor} from "./helpers/token.interceptor";
 import {MatPaginatorIntl} from "@angular/material/paginator";
-import {CustomPaginator} from "./configurations/CustomPaginatorConfiguration";
+import {CustomMatPaginatorIntl} from "./configurations/CustomPaginatorConfiguration";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import { ViewEmployeeComponent } from './manage-employees/view-employee/view-employee.component';
+import { EditEmployeeComponent } from './manage-employees/edit-employee/edit-employee.component';
+import { ChangePwdEmployeeComponent } from './manage-employees/change-pwd-employee/change-pwd-employee.component';
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
 export function momentAdapterFactory() {
@@ -105,7 +107,9 @@ export function httpLoaderFactory(http:HttpClient) {
     AddEmployeeComponent,
     DeleteModalComponent,
     ForgotPasswordComponent,
-    ViewEmployeeComponent
+    ViewEmployeeComponent,
+    EditEmployeeComponent,
+    ChangePwdEmployeeComponent
 
   ],
   exports: [TablerIconsModule],
@@ -142,8 +146,7 @@ export function httpLoaderFactory(http:HttpClient) {
     {provide: LOCALE_ID, useValue: 'fr-FR'},
     {provide: MOMENT, useValue: moment},
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-    { provide: MatPaginatorIntl, useValue: CustomPaginator() },
-    [{ provide: LOCALE_ID, useValue: 'en-US' }],
+    { provide: MatPaginatorIntl, useClass: CustomMatPaginatorIntl },
   ],
 })
 export class AppModule {}

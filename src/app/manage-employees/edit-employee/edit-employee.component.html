@@ -8,7 +8,7 @@
         <form class="form-content" [formGroup]="form" (ngSubmit)="submit()">
           <mat-form-field class="w-100 fs-16" appearance="outline">
             <mat-label>{{"employee.firstName" | translate}}</mat-label>
-            <input matInput type="text"  formControlName="firstName">
+            <input matInput type="text" value="employee.firstName" formControlName="firstName">
           </mat-form-field>
 
           <mat-form-field class="w-100 fs-16" appearance="outline">
@@ -71,15 +71,15 @@
             <div>
               <mat-label style="margin-right: 20px">{{"employee.allowWorkOrder" | translate}}</mat-label>
               <mat-button-toggle-group name="fontStyle" aria-label="Font Style" formControlName="allowWorkOrder">
-                <mat-button-toggle value="true">{{"true" | translate}}</mat-button-toggle>
-                <mat-button-toggle value="false">{{"false" | translate}}</mat-button-toggle>
+                <mat-button-toggle value="true" [checked]="employee!.allowWorkOrder">{{"true" | translate}}</mat-button-toggle>
+                <mat-button-toggle value="false" [checked]="!employee!.allowWorkOrder">{{"false" | translate}}</mat-button-toggle>
               </mat-button-toggle-group>
             </div>
 
             <div>
               <mat-label style="margin-right: 20px">{{"employee.allowLogin" | translate}}</mat-label>
               <mat-button-toggle-group name="fontStyle" aria-label="Font Style" formControlName="allowLogin">
-                <mat-button-toggle value="true" (click)="allowLogin=true">{{"true" | translate}}</mat-button-toggle>
+                <mat-button-toggle value="true" (click)="allowLogin=true" >{{"true" | translate}}</mat-button-toggle>
                 <mat-button-toggle value="false" (click)="allowLogin=false">{{"false" | translate}}</mat-button-toggle>
               </mat-button-toggle-group>
             </div>
@@ -91,22 +91,12 @@
               <input matInput type="text" placeholder="UserName" formControlName="userName">
             </mat-form-field>
 
-            <mat-form-field class="w-100 fs-16" appearance="outline">
-              <mat-label>{{"employee.password" | translate}}</mat-label>
-              <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password">
-              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </mat-form-field>
-            <mat-error *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
-              <mat-error *ngIf="f['password'].errors && f['password'].errors?.['pattern']" style="font-size: xx-small">
-                {{"password-validation" | translate}}
-              </mat-error>
-            </mat-error>
           </div>
 
           <mat-error *ngIf="error"  class="alert alert-danger"> {{error | translate}} </mat-error>
           <div class="button-row d-flex flex-wrap mb-24">
             <button mat-raised-button class="me-8 mb-8" color="primary" style="margin-right: 20px;"
-                   >{{"submit" | translate}}
+            >{{"submit" | translate}}
             </button>
             <button mat-raised-button class="me-8 mb-8" color="warn" (click)="cancel()">{{"cancel" | translate}}</button>
           </div>

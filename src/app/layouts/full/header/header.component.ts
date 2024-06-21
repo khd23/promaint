@@ -48,13 +48,17 @@ export class HeaderComponent {
   currentLanguage!:string
 
 
-  constructor(public dialog: MatDialog, private translateService: TranslateService) {}
+  constructor(public dialog: MatDialog, private translateService: TranslateService) {
+
+  }
   ngOnInit(): void {
+
     this.getCurrentLanguage();
 
   }
   changeLanguage(language: string) {
     this.translateService.use(language);
+    this.translateService.setDefaultLang(language);
     this.getCurrentLanguage();
   }
 

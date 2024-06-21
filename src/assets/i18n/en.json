@@ -1,5 +1,13 @@
 {
   "submit": "submit",
+  "cancel": "Cancel",
+  "userNameExsist": "UserName already exists",
+  "emailExsist": " Email already exists",
+  "oldPwd": "Old Password",
+  "newPwd": "New Password",
+  "confirmPwd": "Confirm Password",
+  "pwdMatches": "The two passwords don't matches",
+  "pwdIncorrect": "Incorrect Password",
   "true": "Yes",
   "false": "No",
   "add": "Add",
@@ -13,11 +21,16 @@
   "password-validation": "The password must be composed of at least 8 characters, characters belonging to the following categories: \n uppercase letters A-Z (Roman alphabet), lowercase letters A-Z (Roman alphabet), digits of 0 to 9 \n, special characters (!, $, #, %, etc.).",
   "phone-validation": "Invalid phone number",
   "email-validation": "Invalid Email",
+  "itemsPerPageLabel": "Items Per Page",
+  "firstPageLabel": "First Page",
+  "previousPageLabel": "Previous Page",
+  "nextPageLabel": "Next Page",
+  "lastPageLabel": "Last Page",
   "loginPage": {
     "username": "Username",
     "password": "Password",
     "forgotPassword": "Forgot Password ?",
-    "create-account":"Create an account",
+    "create-account": "Create an account",
     "new": "New to ProMaint?"
   },
   "header": {
@@ -39,7 +52,6 @@
     "allowLogin": "Allow Login",
     "password": "Password",
     "view": "Employee Details"
-
   },
   "roles": {
     "manager": "Manager",

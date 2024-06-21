@@ -20,14 +20,44 @@ export class ViewEmployeeComponent {
   employee! : Employee
   error: any;
   roles= ROLES;
-  status= STATUS;
+  status!:string;
+  type!:string;
   constructor( public employeeService: EmployeeService, private router: Router,private _snackBar: MatSnackBar,  private route: ActivatedRoute){}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.employeeService.find(this.id).subscribe((data: Employee)=>{
       this.employee = data;
-      console.log("employee",this.employee)
+      if(this.employee != null) {
+        switch (this.employee.status) {
+          case "ACTIVE":
+            this.status = "status.active"
+            break;
+          case "INACTIVE":
+            this.status = "status.inactive"
+            break;
+          case "REQUESTOR":
+            this.status = "status.requestor"
+            break;
+          default:
+            this.status = ""
+            break;
+        }
+        switch (this.employee.type) {
+          case "MANAGER":
+            this.type = "roles.manager"
+            break;
+          case "TECHNICIAN":
+            this.type = "roles.technician"
+            break;
+          case "DRIVER":
+            this.type = "roles.driver"
+            break;
+          default:
+            this.type = ""
+            break;
+        }
+      }
 
     });
 
