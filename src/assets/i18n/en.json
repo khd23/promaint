@@ -8,6 +8,11 @@
   "confirmPwd": "Confirm Password",
   "pwdMatches": "The two passwords don't matches",
   "pwdIncorrect": "Incorrect Password",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "email": "Email",
+  "phoneNumber": "Phone Number",
+  "userName": "UserName",
   "true": "Yes",
   "false": "No",
   "add": "Add",
@@ -52,6 +57,22 @@
     "allowLogin": "Allow Login",
     "password": "Password",
     "view": "Employee Details"
+  },
+  "vendor": {
+    "employee-list": "Vendors List",
+    "title": "Add Vendor",
+    "number": "Number",
+    "fax": "Fax",
+    "website": "WebSite",
+    "street": "Street",
+    "city": "City",
+    "postalCode": "Postal Code",
+    "state": "State",
+    "country": "Country",
+    "general": "General",
+    "address": "Address",
+    "contact": "Contact"
+
   },
   "roles": {
     "manager": "Manager",

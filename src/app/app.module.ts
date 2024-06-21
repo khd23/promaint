@@ -67,6 +67,9 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import { ViewEmployeeComponent } from './manage-employees/view-employee/view-employee.component';
 import { EditEmployeeComponent } from './manage-employees/edit-employee/edit-employee.component';
 import { ChangePwdEmployeeComponent } from './manage-employees/change-pwd-employee/change-pwd-employee.component';
+import { AddVendorComponent } from './manage-vendors/add-vendor/add-vendor.component';
+import { EditVendorComponent } from './manage-vendors/edit-vendor/edit-vendor.component';
+import { ViewVendorComponent } from './manage-vendors/view-vendor/view-vendor.component';
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
 export function momentAdapterFactory() {
@@ -109,7 +112,10 @@ export function httpLoaderFactory(http:HttpClient) {
     ForgotPasswordComponent,
     ViewEmployeeComponent,
     EditEmployeeComponent,
-    ChangePwdEmployeeComponent
+    ChangePwdEmployeeComponent,
+    AddVendorComponent,
+    EditVendorComponent,
+    ViewVendorComponent
 
   ],
   exports: [TablerIconsModule],

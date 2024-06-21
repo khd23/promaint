@@ -60,10 +60,10 @@ export class ChangePwdEmployeeComponent {
    */
   submit() {
     console.log(this.form.value);
-    this.translateService.currentLang === "en" ? this.successMessage = "Updated successfully!" : this.successMessage = "Modifié avec succès !";
+    this.translateService.currentLang === "en" ? this.successMessage = "Password Updated successfully!" : this.successMessage = "mode de passe modifié !";
     this.employeeService.changePassword({userName: this.employee.userName,ancientPassword:this.form.value.ancientPassword, newPassword: this.form.value.newPassword})
       .subscribe((res:any) => {
-          this._snackBar.open("mode de passe modifié!", 'ok', {
+          this._snackBar.open(this.successMessage, 'ok', {
               horizontalPosition: this.horizontalPosition,
               verticalPosition: this.verticalPosition,
               duration: 5000

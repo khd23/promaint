@@ -8,6 +8,11 @@
   "confirmPwd": "Confirmer le mot de passe",
   "pwdMatches": "Les deux mots de passe ne sont pas indentiques",
   "pwdIncorrect": "Mot de passe incorrect",
+  "firstName": "Prenom",
+  "lastName": "Nom",
+  "email": "Email",
+  "phoneNumber": "Numero de telephone",
+  "userName": "Nom d'utilisateur",
   "true": "Oui",
   "false": "Non",
   "add": "Ajouter",
@@ -52,6 +57,23 @@
     "allowLogin": "Autoriser la connexion",
     "password": "Mot de passe",
     "view": "Détails de l'employé"
+  },
+  "vendor": {
+    "employee-list": "Liste des vendeurs",
+    "title": "Ajouter Vendeur",
+    "number": "Numéro",
+    "fax": "Fax",
+    "website": "Site web",
+    "street": "Rue",
+    "city": "Ville",
+    "postalCode": "Code Postale",
+    "state": "Etat",
+    "country": "Pays",
+    "general": "Géneral",
+    "address": "Adresse",
+    "contact": "Contact"
+
+
   },
   "roles": {
     "manager": "Manager",

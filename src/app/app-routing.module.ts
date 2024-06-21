@@ -18,6 +18,9 @@ import {AppSideLoginComponent} from "./pages/authentication/login/login.componen
 import {ViewEmployeeComponent} from "./manage-employees/view-employee/view-employee.component";
 import {EditEmployeeComponent} from "./manage-employees/edit-employee/edit-employee.component";
 import {ChangePwdEmployeeComponent} from "./manage-employees/change-pwd-employee/change-pwd-employee.component";
+import {AddVendorComponent} from "./manage-vendors/add-vendor/add-vendor.component";
+import {ViewVendorComponent} from "./manage-vendors/view-vendor/view-vendor.component";
+import {EditVendorComponent} from "./manage-vendors/edit-vendor/edit-vendor.component";
 
 const routes: Routes = [
   {
@@ -91,9 +94,22 @@ const routes: Routes = [
         path: 'vendors-list',
         component: VendorsListComponent,
         canActivate:[authGuard],
-        data: {
-          title: 'Vendeurs'
-        }
+
+      }, {
+        path: 'add-vendor',
+        component: AddVendorComponent,
+        canActivate:[authGuard],
+
+      },
+      {
+        path: 'view-vendor/:id',
+        component: ViewVendorComponent,
+        canActivate:[authGuard]
+      },
+      {
+        path: 'edit-vendor/:id',
+        component: EditVendorComponent,
+        canActivate:[authGuard]
       },
       {
         path: 'employees-list',
