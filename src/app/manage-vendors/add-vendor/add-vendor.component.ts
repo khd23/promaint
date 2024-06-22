@@ -49,7 +49,7 @@ export class AddVendorComponent {
       phoneNumber: new FormControl('', [Validators.required,  Validators.pattern('^.{8}$')]),
       number: new FormControl('', [Validators.required]),
       fax:new FormControl('', [Validators.required]),
-      website:new FormControl('', [Validators.required]),
+      webSite:new FormControl('', [Validators.required]),
       country: new FormControl('', [Validators.required]),
       state: new FormControl('', [Validators.required]),
       city: new FormControl('', [Validators.required]),
