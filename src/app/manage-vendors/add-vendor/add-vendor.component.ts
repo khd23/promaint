@@ -8,6 +8,9 @@ import {TranslateService} from "@ngx-translate/core";
 import {VendorService} from "../../services/vendor.service";
 import {Vendor} from "../../models/vendor";
 import {CountryService} from "../../services/country.service";
+import {LocationService} from "../../services/location.service";
+import {VENDOR_TYPE} from "../../consts/vendorType";
+import {PAYMENT_TYPE} from "../../consts/paymentType";
 
 @Component({
   selector: 'app-add-vendor',
@@ -21,17 +24,24 @@ export class AddVendorComponent {
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   vendor! : Vendor
   error: any;
-  roles= ROLES;
-  status= STATUS;
   allowLogin: boolean=false;
   successMessage:string='';
-  public countries: any[] = [];
+  countries: any[] = [];
+  locations: any[] = [];
+  types= VENDOR_TYPE;
+  paymentTypes= PAYMENT_TYPE;
 
   constructor( public vendorService: VendorService, private router: Router, private countryService: CountryService,
-               private _snackBar: MatSnackBar, private translateService: TranslateService){}
+               private _snackBar: MatSnackBar, private translateService: TranslateService
+             , private locationService: LocationService){}
 
   ngOnInit(): void {
     this.getCountries();
+    this.locationService.getAll()
+      .subscribe((data: any)=>{
+        this.locations = data;
+
+      })
     this.form = new FormGroup({
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', Validators.required),
@@ -40,11 +50,17 @@ export class AddVendorComponent {
       number: new FormControl('', [Validators.required]),
       fax:new FormControl('', [Validators.required]),
       website:new FormControl('', [Validators.required]),
-      country: new FormControl('', [Validators.required, Validators.email]),
-      state: new FormControl('', [Validators.required,  Validators.pattern('^.{8}$')]),
+      country: new FormControl('', [Validators.required]),
+      state: new FormControl('', [Validators.required]),
       city: new FormControl('', [Validators.required]),
       postalCode:new FormControl('', [Validators.required]),
       street:new FormControl('', [Validators.required]),
+      type: new FormControl('', [Validators.required]),
+      paymentType: new FormControl('', [Validators.required]),
+      laborRate: new FormControl('', [Validators.required]),
+      assignedWO:new FormControl('', [Validators.required]),
+      location:new FormControl('', [Validators.required]),
+      note:new FormControl('', [Validators.required]),
 
     });
   }

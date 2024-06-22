@@ -51,7 +51,7 @@
               </mat-form-field>
               <mat-form-field class="w-100 fs-16" appearance="outline">
                 <mat-label>{{"vendor.postalCode" | translate}}</mat-label>
-                <input matInput type="text" formControlName="postalCode">
+                <input matInput type="number" formControlName="postalCode">
               </mat-form-field>
               <mat-form-field class="w-100 fs-16" appearance="outline">
                 <mat-label>{{"vendor.street" | translate}}</mat-label>
@@ -92,6 +92,73 @@
                 <input matInput type="text" formControlName="website">
               </mat-form-field>
             </div>
+
+
+            <div class="form-space">
+              <h4 class="mb-32">{{"additionalDetails" | translate}}</h4>
+              <mat-form-field appearance="outline">
+                <mat-label>Type</mat-label>
+                <mat-select
+                  disableRipple
+                  formControlName="type"
+                >
+                  <mat-option value="">Select</mat-option>
+                  <mat-option
+                    *ngFor="let type of types"
+                    [value]="type.value"
+                  >{{ type.viewValue | translate }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>{{"vendor.paymentType" | translate}}</mat-label>
+                <mat-select
+                  disableRipple
+                  formControlName="paymentType"
+                >
+                  <mat-option value="">Select</mat-option>
+                  <mat-option
+                    *ngFor="let p of paymentTypes"
+                    [value]="p.value"
+                  >{{ p.viewValue | translate }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>{{"vendor.location" | translate}}</mat-label>
+                <mat-select
+                  disableRipple
+                  formControlName="location"
+                >
+                  <mat-option value="">Select</mat-option>
+                  <mat-option
+                    *ngFor="let location of locations"
+                    [value]="location"
+                  >{{ location.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="w-100 fs-16" appearance="outline">
+                <mat-label>{{"employee.laborRate" | translate}}</mat-label>
+                <input matInput type="number"  formControlName="laborRate">
+                <mat-icon matSuffix>attach_money</mat-icon>
+              </mat-form-field>
+              <mat-form-field class="w-100 fs-16" appearance="outline">
+                <mat-label>Note</mat-label>
+                <textarea matInput type="text"  formControlName="note">
+                  <mat-icon matSuffix>attach_money</mat-icon></textarea>
+              </mat-form-field>
+              <div>
+                <mat-label style="margin-right: 20px">{{"vendor.assignedWO" | translate}}</mat-label>
+                <mat-button-toggle-group name="fontStyle" aria-label="Font Style" formControlName="assignedWO">
+                  <mat-button-toggle value="true" (click)="allowLogin=true">{{"true" | translate}}</mat-button-toggle>
+                  <mat-button-toggle value="false"
+                                     (click)="allowLogin=false">{{"false" | translate}}</mat-button-toggle>
+                </mat-button-toggle-group>
+              </div>
+            </div>
+
 
             <mat-error *ngIf="error" class="alert alert-danger"> {{error | translate}} </mat-error>
             <div class="button-row d-flex flex-wrap mb-24">

@@ -1,3 +1,6 @@
+import {Country} from "./country";
+import {Location} from "./location";
+
 export interface Vendor {
 
   id: number;
@@ -5,9 +8,20 @@ export interface Vendor {
   lastName: string;
   email: string;
   phoneNumber: string;
-  number: string;
+  number: number;
   fax: string;
   webSite: string;
+  street: string;
+  city: string;
+  state: string;
+  postalCode: number;
+  assignedWO: boolean;
+  paymentType: string;
+  type: string;
+  laborRate: number;
+  note: string;
+  location: Location;
+  country: Country;
 
 
 

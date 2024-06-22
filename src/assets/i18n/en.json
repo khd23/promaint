@@ -31,6 +31,7 @@
   "previousPageLabel": "Previous Page",
   "nextPageLabel": "Next Page",
   "lastPageLabel": "Last Page",
+  "additionalDetails": "Additional Details",
   "loginPage": {
     "username": "Username",
     "password": "Password",
@@ -71,13 +72,26 @@
     "country": "Country",
     "general": "General",
     "address": "Address",
-    "contact": "Contact"
-
+    "contact": "Contact",
+    "assignedWO": "Vendor Can Be Assigned To Work Orders",
+    "paymentType": "PaymentType",
+    "location": "Location",
+    "service": "SERVICE PROVIDER",
+    "retailer": "RETAILER",
+    "wholesaler": "WHOLESALER",
+    "manufacturer": "MANUFACTURER"
   },
   "roles": {
     "manager": "Manager",
     "technician": "Technician",
     "driver": "Driver"
+  },
+  "payment": {
+    "debitcard": "Debit card",
+    "creditcard": "Credit card",
+    "transfer": "Wire transfer",
+    "check": "Check",
+    "cash": "Cash"
   },
   "status": {
     "active": "ACTIVE",

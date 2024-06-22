@@ -1,1 +1,28 @@
-<p>view-vendor works!</p>
+<mat-card class="w-100">
+  <mat-card-header>
+    <h4 class="mb-56" style="color: #2c4d75">{{vendor.firstName}} {{ vendor.lastName}}</h4>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <h4 class="mb-56">{{"firstName" | translate}} & {{"lastName" | translate}} :</h4>
+    <h4 class="mb-56">{{vendor.firstName}} {{ vendor.lastName}}</h4>
+    <mat-divider></mat-divider>
+
+    <h4 class="mb-56">{{"vendor.address" | translate}}:</h4>
+    <h4 class="mb-56">{{vendor.state}}, {{ vendor.city}}</h4>
+    <h4 class="mb-56">{{vendor.state}}, {{ vendor.country.countryName}}, {{vendor.postalCode}}</h4>
+    <mat-divider></mat-divider>
+
+    <h4 class="mb-56">{{"vendor.assignedWO" | translate}}:</h4>
+    <h4 class="mb-56">{{ vendor.assignedWO.toString() | translate}}</h4>
+    <mat-divider></mat-divider>
+
+    <h4 class="mb-56">{{"employee.laborRate" | translate}}:</h4>
+    <h4 class="mb-56">{{vendor.laborRate}}</h4>
+    <mat-divider></mat-divider>
+
+    <h4 class="mb-56">{{"vendor.location" | translate}}:</h4>
+    <h4 class="mb-56">{{vendor.location.name}}</h4>
+
+  </mat-card-content>
+</mat-card>

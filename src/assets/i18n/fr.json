@@ -31,6 +31,7 @@
   "previousPageLabel": "Page précédente",
   "nextPageLabel": "Page Suivante",
   "lastPageLabel": "Dernière page",
+  "additionalDetails": "Détails supplémentaires",
   "loginPage": {
     "username": "Nom d'utilisateur",
     "password": "Mot de passe",
@@ -71,9 +72,23 @@
     "country": "Pays",
     "general": "Géneral",
     "address": "Adresse",
-    "contact": "Contact"
+    "contact": "Contact",
+    "assignedWO": "Le fournisseur peut être affecté à des bons de travail",
+    "paymentType": "Type de paiement",
+    "location": "Emplacement",
+    "service": "FOURNISSEUR DE SERVICES",
+    "retailer": "DÉTAILLANT",
+    "wholesaler": "GROSSISTE",
+    "manufacturer": "FABRICANT"
 
 
+  },
+  "payment": {
+    "debitcard": "carte de débit",
+    "creditcard": "carte de crédit",
+    "transfer": "VIREMENT BANCAIRE",
+    "check": "Chèque",
+    "cash": "espèces"
   },
   "roles": {
     "manager": "Manager",
