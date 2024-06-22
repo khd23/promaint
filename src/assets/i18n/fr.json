@@ -3,6 +3,9 @@
   "cancel": "Annuler",
   "userNameExsist": "Nom d'utilisateur existe déjà",
   "emailExsist": " Email existe déjà",
+  "userNameOrPasswordIncorrect": "UserName ou Mot de passe incorrecte",
+  "serverError": "Erreur interne du serveur",
+  "notAllowed": "Vous n'êtes pas autorisé",
   "oldPwd": "Ancien mot de passe",
   "newPwd": "Nouveau mot de passe",
   "confirmPwd": "Confirmer le mot de passe",
@@ -32,6 +35,9 @@
   "nextPageLabel": "Page Suivante",
   "lastPageLabel": "Dernière page",
   "additionalDetails": "Détails supplémentaires",
+  "warehouse": "Magasin",
+  "location": "Emplacement",
+  "default": "Par défaut",
   "loginPage": {
     "username": "Nom d'utilisateur",
     "password": "Mot de passe",
@@ -79,7 +85,8 @@
     "service": "FOURNISSEUR DE SERVICES",
     "retailer": "DÉTAILLANT",
     "wholesaler": "GROSSISTE",
-    "manufacturer": "FABRICANT"
+    "manufacturer": "FABRICANT",
+    "defaultWarehouse": "Magasin par défaut"
 
 
   },

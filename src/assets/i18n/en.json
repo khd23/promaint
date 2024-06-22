@@ -3,6 +3,9 @@
   "cancel": "Cancel",
   "userNameExsist": "UserName already exists",
   "emailExsist": " Email already exists",
+  "userNameOrPasswordIncorrect": "Incorrect UserName or Password",
+  "serverError": "Internal Server Error",
+  "NotAllowed": "You are not authorized",
   "oldPwd": "Old Password",
   "newPwd": "New Password",
   "confirmPwd": "Confirm Password",
@@ -32,6 +35,9 @@
   "nextPageLabel": "Next Page",
   "lastPageLabel": "Last Page",
   "additionalDetails": "Additional Details",
+  "warehouse": "Warehouse",
+  "location": "Location",
+  "default": "Default",
   "loginPage": {
     "username": "Username",
     "password": "Password",
@@ -57,7 +63,9 @@
     "allowWorkOrder": "Allow Work Order",
     "allowLogin": "Allow Login",
     "password": "Password",
-    "view": "Employee Details"
+    "view": "Employee Details",
+    "defaultWarehouse": "Default warehouse"
+
   },
   "vendor": {
     "employee-list": "Vendors List",

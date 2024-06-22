@@ -75,9 +75,17 @@ export class AppSideLoginComponent {
       }
       ,
       error => {
+        if(error.status===401){
+          this.error = "userNameOrPasswordIncorrect"
+        }
+        else if (error.status===423){
+          this.error = "notAllowed";
+        }
+        else {
+          this.error = "serverError";
+        }
 
-        error.status===401? this.error = "UserName ou Mot de passe incorrecte": this.error = "Erreur interne au serveur";
-        console.log(error)
+
       })
 
   }

@@ -65,7 +65,7 @@
               <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required />
               <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </mat-form-field>
-            <mat-error *ngIf="error"  class="alert alert-danger"> {{error}} </mat-error>
+            <mat-error *ngIf="error"  class="alert alert-danger"> {{error  | translate}} </mat-error>
             <div class="d-flex align-items-center m-b-12">
 <!--              <mat-checkbox color="primary">Remember this Device</mat-checkbox>-->
               <a

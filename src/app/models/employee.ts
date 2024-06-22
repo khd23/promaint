@@ -13,6 +13,9 @@ export interface Employee {
   allowWorkOrder: boolean;
   allowLogin: boolean;
   type: string;
+  locations: any[];
+  warehouses: any[];
+  defaultWarehouse:any;
 
 
 }
