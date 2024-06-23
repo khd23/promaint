@@ -52,6 +52,23 @@ export const navItems: NavItem[] = [
     iconName: 'calendar',
     route: '/calendar',
   },
+  {
+    displayName: 'location',
+    iconName: 'map-pin-check',
+    route: '/locations-list',
+  },
+  {
+    displayName: 'warehouses',
+    iconName: 'building-store',
+    route: '/warehouses-list',
+  },
+
+
+  {
+    displayName: 'inventCategories',
+    iconName: 'category-2',
+    route: '/inv-category-list',
+  },
   // {
   //   displayName: 'Sample Page',
   //   iconName: 'aperture',

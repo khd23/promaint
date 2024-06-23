@@ -1,5 +1,5 @@
 import {Country} from "./country";
-import {Location} from "./location";
+import {EmployeeLocation} from "./location";
 
 export interface Vendor {
 
@@ -20,7 +20,7 @@ export interface Vendor {
   type: string;
   laborRate: number;
   note: string;
-  location: Location;
+  location: EmployeeLocation;
   country: Country;
 
 

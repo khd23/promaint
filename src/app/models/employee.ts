@@ -1,3 +1,6 @@
+import {Warehouse} from "./warehouse";
+import {EmployeeLocation} from "./location";
+
 export interface Employee {
 
   id: number;
@@ -13,9 +16,9 @@ export interface Employee {
   allowWorkOrder: boolean;
   allowLogin: boolean;
   type: string;
-  locations: any[];
-  warehouses: any[];
-  defaultWarehouse:any;
+  locations: EmployeeLocation[];
+  warehouses: Warehouse[];
+  defaultWarehouse:Warehouse;
 
 
 }

@@ -1,6 +1,6 @@
 <mat-card class="w-100">
   <mat-card-header>
-    <h4 class="mb-56">{{"employee.title" | translate}}</h4>
+    <h4 class="mb-56">{{"edit" | translate}} {{"employee.employee" | translate}}</h4>
   </mat-card-header>
   <mat-card-content>
     <div class="card">
@@ -65,22 +65,46 @@
             <input matInput type="number"  formControlName="laborRate">
             <mat-icon matSuffix>attach_money</mat-icon>
           </mat-form-field>
+          <section class="example-section">
+            <mat-label>{{"location" | translate}}s</mat-label>
+            <mat-checkbox *ngFor="let location of locations"  #checkBoxLocation [value]="location" (change)="getCheckboxLocation(checkBoxLocation)"
+                          [checked]="isCheckedLocations(location)" >{{ location.name }}</mat-checkbox>
+          </section>
+          <section class="example-section">
+            <mat-label>{{"warehouse" | translate}}s</mat-label>
+            <mat-checkbox *ngFor="let warehouse of warehouses"   #checkBoxWarehouse [value]="warehouse" (change)="getCheckboxWarehouse(checkBoxWarehouse)"
+                          [checked]="isCheckedWarehouses(warehouse)" >{{ warehouse.name }}</mat-checkbox>
+          </section>
 
+          <mat-form-field appearance="outline">
+            <mat-label>{{"vendor.defaultWarehouse" | translate}} </mat-label>
+            <mat-select
+              disableRipple
+              formControlName="defaultWarehouse"
+            >
+              <mat-option value="">Select</mat-option>
+              <mat-option
+                *ngFor="let warehouse of warehouses"
+                [value]="warehouse"
+              >{{ warehouse.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
 
           <div class="toggle-buttons">
             <div>
               <mat-label style="margin-right: 20px">{{"employee.allowWorkOrder" | translate}}</mat-label>
               <mat-button-toggle-group name="fontStyle" aria-label="Font Style" formControlName="allowWorkOrder">
-                <mat-button-toggle value="true" [checked]="employee!.allowWorkOrder">{{"true" | translate}}</mat-button-toggle>
-                <mat-button-toggle value="false" [checked]="!employee!.allowWorkOrder">{{"false" | translate}}</mat-button-toggle>
+                <mat-button-toggle value="true" [checked]="allowWorkOrder" (click)="allowWorkOrder=true">{{"true" | translate}}</mat-button-toggle>
+                <mat-button-toggle value="false" [checked]="!allowWorkOrder" (click)="allowWorkOrder=false">{{"false" | translate}}</mat-button-toggle>
               </mat-button-toggle-group>
             </div>
 
             <div>
               <mat-label style="margin-right: 20px">{{"employee.allowLogin" | translate}}</mat-label>
               <mat-button-toggle-group name="fontStyle" aria-label="Font Style" formControlName="allowLogin">
-                <mat-button-toggle value="true" (click)="allowLogin=true" >{{"true" | translate}}</mat-button-toggle>
-                <mat-button-toggle value="false" (click)="allowLogin=false">{{"false" | translate}}</mat-button-toggle>
+                <mat-button-toggle value="true" [checked]="allowLogin" (click)="allowLogin=true" >{{"true" | translate}}</mat-button-toggle>
+                <mat-button-toggle value="false" [checked]="!allowLogin" (click)="allowLogin=false">{{"false" | translate}}</mat-button-toggle>
               </mat-button-toggle-group>
             </div>
           </div>

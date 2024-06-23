@@ -1,0 +1,43 @@
+<mat-card class="w-100">
+  <mat-card-header>
+    <h4 class="mb-56">{{"edit" | translate}} {{location?.name}}</h4>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="card">
+      <div class="card-body">
+        <form class="form-content" [formGroup]="form" (ngSubmit)="submit()">
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"name" | translate}}</mat-label>
+            <input matInput type="text" formControlName="name">
+          </mat-form-field>
+
+
+          <!--          <mat-form-field appearance="outline">-->
+          <!--            <mat-label>{{"vendor.defaultWarehouse" | translate}} </mat-label>-->
+          <!--            <mat-select-->
+          <!--              disableRipple-->
+          <!--              formControlName="defaultWarehouse"-->
+          <!--            >-->
+          <!--              <mat-option value="">Select</mat-option>-->
+          <!--              <mat-option-->
+          <!--                *ngFor="let warehouse of warehouses"-->
+          <!--                [value]="warehouse"-->
+          <!--              >{{ warehouse.name }}-->
+          <!--              </mat-option>-->
+          <!--            </mat-select>-->
+          <!--          </mat-form-field>-->
+
+          <mat-error *ngIf="error" class="alert alert-danger"> {{error | translate}} </mat-error>
+          <div class="button-row d-flex flex-wrap mb-24">
+            <button mat-raised-button class="me-8 mb-8" color="primary" style="margin-right: 20px;"
+            >{{"submit" | translate}}
+            </button>
+            <button mat-raised-button class="me-8 mb-8" color="warn"
+                    (click)="cancel()">{{"cancel" | translate}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+

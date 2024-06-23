@@ -70,6 +70,18 @@ import { ChangePwdEmployeeComponent } from './manage-employees/change-pwd-employ
 import { AddVendorComponent } from './manage-vendors/add-vendor/add-vendor.component';
 import { EditVendorComponent } from './manage-vendors/edit-vendor/edit-vendor.component';
 import { ViewVendorComponent } from './manage-vendors/view-vendor/view-vendor.component';
+import { LocationsListComponent } from './manage-locations/locations-list/locations-list.component';
+import { AddLocationComponent } from './manage-locations/add-location/add-location.component';
+import { EditLocationComponent } from './manage-locations/edit-location/edit-location.component';
+import { WarehousesListComponent } from './manage-warehouses/warehouses-list/warehouses-list.component';
+import { AddWarehouseComponent } from './manage-warehouses/add-warehouse/add-warehouse.component';
+import { EditWarehouseComponent } from './manage-warehouses/edit-warehouse/edit-warehouse.component';
+import { InvCategoriesListComponent } from './manage-inv-categories/inv-categories-list/inv-categories-list.component';
+import { AddInvCategoryComponent } from './manage-inv-categories/add-inv-category/add-inv-category.component';
+import { EditInvCategoryComponent } from './manage-inv-categories/edit-inv-category/edit-inv-category.component';
+import { AddIventoryComponent } from './manage-inventory/add-iventory/add-iventory.component';
+import { EditIventoryComponent } from './manage-inventory/edit-iventory/edit-iventory.component';
+import { ViewIventoryComponent } from './manage-inventory/view-iventory/view-iventory.component';
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
 export function momentAdapterFactory() {
@@ -115,7 +127,19 @@ export function httpLoaderFactory(http:HttpClient) {
     ChangePwdEmployeeComponent,
     AddVendorComponent,
     EditVendorComponent,
-    ViewVendorComponent
+    ViewVendorComponent,
+    LocationsListComponent,
+    AddLocationComponent,
+    EditLocationComponent,
+    WarehousesListComponent,
+    AddWarehouseComponent,
+    EditWarehouseComponent,
+    InvCategoriesListComponent,
+    AddInvCategoryComponent,
+    EditInvCategoryComponent,
+    AddIventoryComponent,
+    EditIventoryComponent,
+    ViewIventoryComponent
 
   ],
   exports: [TablerIconsModule],

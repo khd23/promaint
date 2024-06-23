@@ -21,6 +21,18 @@ import {ChangePwdEmployeeComponent} from "./manage-employees/change-pwd-employee
 import {AddVendorComponent} from "./manage-vendors/add-vendor/add-vendor.component";
 import {ViewVendorComponent} from "./manage-vendors/view-vendor/view-vendor.component";
 import {EditVendorComponent} from "./manage-vendors/edit-vendor/edit-vendor.component";
+import {LocationsListComponent} from "./manage-locations/locations-list/locations-list.component";
+import {AddLocationComponent} from "./manage-locations/add-location/add-location.component";
+import {EditLocationComponent} from "./manage-locations/edit-location/edit-location.component";
+import {WarehousesListComponent} from "./manage-warehouses/warehouses-list/warehouses-list.component";
+import {AddWarehouseComponent} from "./manage-warehouses/add-warehouse/add-warehouse.component";
+import {EditWarehouseComponent} from "./manage-warehouses/edit-warehouse/edit-warehouse.component";
+import {InvCategoriesListComponent} from "./manage-inv-categories/inv-categories-list/inv-categories-list.component";
+import {AddInvCategoryComponent} from "./manage-inv-categories/add-inv-category/add-inv-category.component";
+import {EditInvCategoryComponent} from "./manage-inv-categories/edit-inv-category/edit-inv-category.component";
+import {AddIventoryComponent} from "./manage-inventory/add-iventory/add-iventory.component";
+import {EditIventoryComponent} from "./manage-inventory/edit-iventory/edit-iventory.component";
+import {ViewIventoryComponent} from "./manage-inventory/view-iventory/view-iventory.component";
 
 const routes: Routes = [
   {
@@ -65,14 +77,31 @@ const routes: Routes = [
           title: 'Ajouter équipement'
         },
       },
+
+
       {
         path: 'inventory-list',
         component: InventoryListComponent,
         canActivate:[authGuard],
-        data: {
-          title: 'Inventaires'
-        }
       },
+      {
+        path: 'add-inventory',
+        component: AddIventoryComponent,
+        canActivate:[authGuard],
+      },
+      {
+        path: 'edit-inventory/:id',
+        component: EditIventoryComponent,
+        canActivate:[authGuard],
+      },
+
+      {
+        path: 'view-inventory/:id',
+        component: ViewIventoryComponent,
+        canActivate:[authGuard],
+      },
+
+
 
       {
         path: 'purchasing-list',
@@ -139,6 +168,59 @@ const routes: Routes = [
         component: EditEmployeeComponent,
         canActivate:[authGuard]
       },
+
+      {
+        path: 'warehouses-list',
+        component: WarehousesListComponent,
+
+        canActivate:[authGuard],
+      },
+      {
+        path: 'add-warehouse',
+        component: AddWarehouseComponent,
+        canActivate:[authGuard],
+      },
+      {
+        path: 'edit-warehouse/:id',
+        component: EditWarehouseComponent,
+        canActivate:[authGuard]
+      },
+
+      {
+        path: 'locations-list',
+        component: LocationsListComponent,
+
+        canActivate:[authGuard],
+      },
+      {
+        path: 'add-location',
+        component: AddLocationComponent,
+        canActivate:[authGuard],
+      },
+      {
+        path: 'edit-location/:id',
+        component: EditLocationComponent,
+        canActivate:[authGuard]
+      },
+
+      {
+        path: 'inv-category-list',
+        component: InvCategoriesListComponent,
+
+        canActivate:[authGuard],
+      },
+      {
+        path: 'add-inv-category',
+        component: AddInvCategoryComponent,
+        canActivate:[authGuard],
+      },
+      {
+        path: 'edit-inv-category/:id',
+        component: EditInvCategoryComponent,
+        canActivate:[authGuard]
+      },
+
+
       {
         path: 'change-pwd-employee/:id',
         component: ChangePwdEmployeeComponent,

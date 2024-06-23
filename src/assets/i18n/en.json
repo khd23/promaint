@@ -11,6 +11,7 @@
   "confirmPwd": "Confirm Password",
   "pwdMatches": "The two passwords don't matches",
   "pwdIncorrect": "Incorrect Password",
+  "name": "Name",
   "firstName": "First Name",
   "lastName": "Last Name",
   "email": "Email",
@@ -37,7 +38,12 @@
   "additionalDetails": "Additional Details",
   "warehouse": "Warehouse",
   "location": "Location",
+  "spcategory": "Spare part Category",
+  "sp": "Spare part",
+  "category": "Category",
   "default": "Default",
+  "unitCost": "Unit Cost",
+  "qte": "Quantity",
   "loginPage": {
     "username": "Username",
     "password": "Password",
@@ -52,6 +58,7 @@
   "employee": {
     "employee-list": "Employee List",
     "title": "Add Employee",
+    "employee": "Employee",
     "firstName": "First Name",
     "lastName": "Last Name",
     "email": "Email",
@@ -106,4 +113,5 @@
     "inactive": "INACTIVE",
     "requestor": "REQUESTOR"
   }
+
 }
