@@ -36,13 +36,14 @@
   "nextPageLabel": "Page Suivante",
   "lastPageLabel": "Dernière page",
   "additionalDetails": "Détails supplémentaires",
+  "generalinfo": "Informations générales",
   "warehouse": "Magasin",
   "location": "Emplacement",
   "sp": "Pièce de rechange",
   "spcategory": "Catégories des Pièces de rechange",
   "category": "Catégorie",
   "unitCost": "Coût unitaire",
-  "qte": "Quantité",
+  "qty": "Quantité",
   "default": "Par défaut",
   "loginPage": {
     "username": "Nom d'utilisateur",
@@ -73,6 +74,7 @@
     "view": "Détails de l'employé"
   },
   "vendor": {
+    "vendors": "Vendeurs",
     "employee-list": "Liste des vendeurs",
     "title": "Ajouter Vendeur",
     "number": "Numéro",
@@ -113,5 +115,21 @@
     "active": "ACTIF",
     "inactive": "INACTIF",
     "requestor": "DEMANDEUR"
+  },
+  "sparePart": {
+    "unitType": "Type d'unité",
+    "count": "nombre",
+    "length": "Longueur",
+    "volume": "Volume",
+    "weight": "Poids",
+    "reorderPoint": "Point de commande",
+    "reorderQty": "Quantité de commande",
+    "maxQty": "Quantité maximale",
+    "minQty": "Quantité minimale",
+    "vendorPart": "Partie fournisseur",
+    "barCode": "Code à barre"
+
   }
+
+
 }

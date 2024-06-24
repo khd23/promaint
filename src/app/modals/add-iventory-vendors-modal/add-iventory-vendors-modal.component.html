@@ -1,0 +1,38 @@
+<div mat-dialog-content>
+
+  <mat-form-field appearance="outline">
+    <mat-label>{{"vendor.vendors" | translate}} </mat-label>
+    <mat-select
+      disableRipple
+      formControlName="category"
+    >
+      <mat-option value="">Select</mat-option>
+      <mat-option
+        *ngFor="let vendor of vendors"
+        [value]="vendor"
+      >{{ vendor.firstName }} {{ vendor.lastName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field class="w-100 fs-16" appearance="outline">
+    <mat-label>{{"vendorPart" | translate}}</mat-label>
+    <input matInput type="text" formControlName="vendorPart">
+  </mat-form-field>
+
+  <mat-form-field class="w-100 fs-16" appearance="outline">
+    <mat-label>{{"barCode" | translate}}</mat-label>
+    <input matInput type="number" formControlName="barCode">
+  </mat-form-field>
+
+
+  <mat-error *ngIf="error" class="alert alert-danger"> {{error | translate}} </mat-error>
+
+</div>
+<div mat-dialog-actions class="button-row d-flex flex-wrap mb-24">
+<!--  [mat-dialog-close]="data"-->
+  <button mat-raised-button class="me-8 mb-8" color="primary" cdkFocusInitial >Ajouter</button>
+  <button mat-raised-button class="me-8 mb-8" color="accent" (click)="onNoClick()">Annuler</button>
+</div>
+

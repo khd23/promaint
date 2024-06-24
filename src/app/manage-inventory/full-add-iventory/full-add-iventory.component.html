@@ -1,0 +1,21 @@
+<mat-card class="w-100">
+  <mat-card-header>
+    <h4 class="mb-56">{{"add" | translate}} {{"sp" | translate}}</h4>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-tab-group>
+      <mat-tab label='{{"generalinfo" | translate}}' #addInventoryComponent> <app-add-iventory></app-add-iventory> </mat-tab>
+      <mat-tab label='{{"vendor.vendors" | translate}}'><app-add-iventory-vendors></app-add-iventory-vendors> </mat-tab>
+      <mat-tab label='{{"warehouse" | translate}}s'> <app-add-iventory-warehouses></app-add-iventory-warehouses> </mat-tab>
+    </mat-tab-group>
+
+  </mat-card-content>
+</mat-card>
+
+<div class="button-row d-flex flex-wrap mb-24">
+  <button mat-raised-button class="me-8 mb-8" color="primary" style="margin-right: 20px;"
+  >{{"submit" | translate}}
+  </button>
+  <button mat-raised-button class="me-8 mb-8" color="warn"
+          (click)="cancel()">{{"cancel" | translate}}</button>
+</div>

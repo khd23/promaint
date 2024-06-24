@@ -1,0 +1,49 @@
+  <mat-card-header>
+    <h4 class="mb-56">{{"vendor.vendors" | translate}}</h4>
+    <button mat-raised-button  color="accent" style="color: white;margin-left: 80%;">
+      <mat-icon>add</mat-icon>
+      {{"add" | translate}}
+    </button>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="card">
+      <div class="card-body">
+        <form class="form-content" [formGroup]="form" >
+          <mat-form-field appearance="outline">
+            <mat-label>{{"vendor.vendors" | translate}} </mat-label>
+            <mat-select
+              disableRipple
+              formControlName="category"
+            >
+              <mat-option value="">Select</mat-option>
+              <mat-option
+                *ngFor="let vendor of vendors"
+                [value]="vendor"
+              >{{ vendor.firstName }} {{ vendor.lastName }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"vendorPart" | translate}}</mat-label>
+            <input matInput type="text" formControlName="qty">
+          </mat-form-field>
+
+          <mat-form-field class="w-100 fs-16" appearance="outline">
+            <mat-label>{{"barCode" | translate}}</mat-label>
+            <input matInput type="number" formControlName="unitCost">
+            <mat-icon matSuffix>attach_money</mat-icon>
+          </mat-form-field>
+
+
+
+
+
+          <mat-error *ngIf="error" class="alert alert-danger"> {{error | translate}} </mat-error>
+
+        </form>
+      </div>
+    </div>
+  </mat-card-content>
+

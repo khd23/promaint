@@ -33,6 +33,8 @@ import {EditInvCategoryComponent} from "./manage-inv-categories/edit-inv-categor
 import {AddIventoryComponent} from "./manage-inventory/add-iventory/add-iventory.component";
 import {EditIventoryComponent} from "./manage-inventory/edit-iventory/edit-iventory.component";
 import {ViewIventoryComponent} from "./manage-inventory/view-iventory/view-iventory.component";
+import {FullAddIventoryComponent} from "./manage-inventory/full-add-iventory/full-add-iventory.component";
+import {FullEditIventoryComponent} from "./manage-inventory/full-edit-iventory/full-edit-iventory.component";
 
 const routes: Routes = [
   {
@@ -86,12 +88,12 @@ const routes: Routes = [
       },
       {
         path: 'add-inventory',
-        component: AddIventoryComponent,
+        component: FullAddIventoryComponent,
         canActivate:[authGuard],
       },
       {
         path: 'edit-inventory/:id',
-        component: EditIventoryComponent,
+        component: FullEditIventoryComponent,
         canActivate:[authGuard],
       },
 

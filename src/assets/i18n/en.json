@@ -36,6 +36,7 @@
   "nextPageLabel": "Next Page",
   "lastPageLabel": "Last Page",
   "additionalDetails": "Additional Details",
+  "generalinfo": "General informations",
   "warehouse": "Warehouse",
   "location": "Location",
   "spcategory": "Spare part Category",
@@ -43,7 +44,7 @@
   "category": "Category",
   "default": "Default",
   "unitCost": "Unit Cost",
-  "qte": "Quantity",
+  "qty": "Quantity",
   "loginPage": {
     "username": "Username",
     "password": "Password",
@@ -75,6 +76,7 @@
 
   },
   "vendor": {
+    "vendors": "Vendors",
     "employee-list": "Vendors List",
     "title": "Add Vendor",
     "number": "Number",
@@ -112,6 +114,20 @@
     "active": "ACTIVE",
     "inactive": "INACTIVE",
     "requestor": "REQUESTOR"
+  },
+  "sparePart": {
+    "unitType": "Unit Type",
+    "count": "Count",
+    "length": "Length",
+    "volume": "Volume",
+    "weight": "Weight",
+    "reorderPoint": "Reorder Point",
+    "reorderQty": "Reorder Quantity",
+    "maxQty": "Max Quantity",
+    "minQty": "Min Quantity",
+    "vendorPart": "Vendor Part",
+    "barCode": "BarCode"
+
   }
 
 }

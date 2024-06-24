@@ -5,6 +5,9 @@ import {Router} from "@angular/router";
 import {TranslateService} from "@ngx-translate/core";
 import {Inventory} from "../../models/inventory";
 import {InventoryService} from "../../services/inventory.service";
+import {InvCategory} from "../../models/inv-category";
+import {InvCategoryService} from "../../services/inv-category.service";
+import {UNIT_TYPE} from "../../consts/unitType";
 
 @Component({
   selector: 'app-add-iventory',
@@ -16,20 +19,27 @@ export class AddIventoryComponent {
   hide = true;
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
-  Inventory! : Inventory
+  inventory! : Inventory
   successMessage :string='';
   error :string='';
-  constructor(  private router: Router,
+  categories:InvCategory[]=[];
+  unitTypes= UNIT_TYPE;
+
+  constructor(  private router: Router , private invCategoryService: InvCategoryService,
                 private _snackBar: MatSnackBar, private translateService: TranslateService, private inventoryService: InventoryService){}
 
   ngOnInit(): void {
+    this.invCategoryService.getAll()
+      .subscribe((data: any)=>{
+        this.categories = data;
 
+      })
     this.form = new FormGroup({
       name: new FormControl('', [Validators.required]),
       reference: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required]),
-      unitCost: new FormControl('', [Validators.required]),
-      qte: new FormControl('', [Validators.required]),
+      unitType: new FormControl('', [Validators.required]),
+      category: new FormControl('', [Validators.required]),
 
 
 
@@ -47,8 +57,8 @@ export class AddIventoryComponent {
   submit(){
     console.log(this.form.value);
     this.translateService.currentLang==="en"? this.successMessage="Registered successfully!" : this.successMessage="Enregistré avec succès !";
-    this.Inventory= this.form.value;
-    this.inventoryService.create(this.Inventory)
+    this.inventory= this.form.value;
+    this.inventoryService.create(this.inventory)
       .subscribe(
         data => {
           console.log(data)
@@ -67,8 +77,6 @@ export class AddIventoryComponent {
       );
 
   }
-  cancel() {
-    this.router.navigateByUrl('/inventory-list');
-  }
+
 
 }

@@ -82,6 +82,12 @@ import { EditInvCategoryComponent } from './manage-inv-categories/edit-inv-categ
 import { AddIventoryComponent } from './manage-inventory/add-iventory/add-iventory.component';
 import { EditIventoryComponent } from './manage-inventory/edit-iventory/edit-iventory.component';
 import { ViewIventoryComponent } from './manage-inventory/view-iventory/view-iventory.component';
+import { FullAddIventoryComponent } from './manage-inventory/full-add-iventory/full-add-iventory.component';
+import { FullEditIventoryComponent } from './manage-inventory/full-edit-iventory/full-edit-iventory.component';
+import { AddIventoryVendorsComponent } from './manage-inventory/add-iventory-vendors/add-iventory-vendors.component';
+import { AddIventoryWarehousesComponent } from './manage-inventory/add-iventory-warehouses/add-iventory-warehouses.component';
+import { AddIventoryWarehousesModalComponent } from './modals/add-iventory-warehouses-modal/add-iventory-warehouses-modal.component';
+import { AddIventoryVendorsModalComponent } from './modals/add-iventory-vendors-modal/add-iventory-vendors-modal.component';
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
 export function momentAdapterFactory() {
@@ -139,7 +145,13 @@ export function httpLoaderFactory(http:HttpClient) {
     EditInvCategoryComponent,
     AddIventoryComponent,
     EditIventoryComponent,
-    ViewIventoryComponent
+    ViewIventoryComponent,
+    FullAddIventoryComponent,
+    FullEditIventoryComponent,
+    AddIventoryVendorsComponent,
+    AddIventoryWarehousesComponent,
+    AddIventoryWarehousesModalComponent,
+    AddIventoryVendorsModalComponent
 
   ],
   exports: [TablerIconsModule],
