@@ -54,6 +54,9 @@ export class AddIventoryComponent {
    *
    * @return response()
    */
+  cancel() {
+    this.router.navigateByUrl('/inventory-list');
+  }
   submit(){
     console.log(this.form.value);
     this.translateService.currentLang==="en"? this.successMessage="Registered successfully!" : this.successMessage="Enregistré avec succès !";

@@ -1,10 +1,12 @@
+<mat-card class="w-100">
+
 <mat-card-header>
   <h4 class="mb-56">{{"warehouse" | translate}}s</h4>
 </mat-card-header>
 <mat-card-content>
   <div class="card">
     <div class="card-body">
-      <form class="form-content" [formGroup]="form" >
+      <form class="form-content" [formGroup]="form" (ngSubmit)="submit()" >
         <mat-form-field appearance="outline">
           <mat-label>{{"warehouse" | translate}} </mat-label>
           <mat-select
@@ -55,9 +57,16 @@
 
 
         <mat-error *ngIf="error" class="alert alert-danger"> {{error | translate}} </mat-error>
-
+        <div class="button-row d-flex flex-wrap mb-24">
+          <button mat-raised-button class="me-8 mb-8" color="primary" style="margin-right: 20px;"
+          >{{"submit" | translate}}
+          </button>
+          <button mat-raised-button class="me-8 mb-8" color="warn"
+                  (click)="cancel()">{{"cancel" | translate}}</button>
+        </div>
       </form>
     </div>
   </div>
 </mat-card-content>
 
+</mat-card>

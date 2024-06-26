@@ -1,14 +1,14 @@
 <mat-card class="w-100">
   <mat-card-header>
-    <h4 class="mb-56">Pièces de rechange</h4>
+    <h4 class="mb-56"> {{"sp" | translate}}s</h4>
   </mat-card-header>
   <mat-card-content>
     <mat-grid-list cols="4" rowHeight="100px">
       <mat-grid-tile [colspan]=3 [rowspan]=1>
         <mat-form-field class="w-100" color="primary">
           <!--          <i-feather name="search" class="mt-n3 text-light-muted feather-base text-dark"></i-feather>-->
-          <mat-label class="fs-16">Rechercher Ici</mat-label>
-          <input matInput>
+          <mat-label class="fs-16"> {{"search" | translate}}</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile [colspan]=1 [rowspan]=1>
@@ -18,75 +18,89 @@
             src="./assets/images/icons/icon-add.png"
             alt="Photo of a Shiba Inu"
           />
-          <p style="color: white"> Ajouter</p>
+          <p style="color: white"> {{"add" | translate}}</p>
         </mat-chip>
       </mat-grid-tile>
     </mat-grid-list>
     <div class="table-responsive">
-      <table mat-table [dataSource]="dataSource" class="text-nowrap w-100">
+      <table mat-table [dataSource]="dataSource" class="text-nowrap w-100" matSort>
 
         <!-- Id Column -->
-        <ng-container matColumnDef="ref">
-          <th mat-header-cell *matHeaderCellDef>Référence</th>
-          <td mat-cell class="fw-medium" *matCellDef="let element"> {{element.ref}} </td>
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+          <td mat-cell class="fw-medium" *matCellDef="let element"> {{element.id}} </td>
         </ng-container>
 
         <!-- Assigned Column -->
+        <ng-container matColumnDef="reference">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Reference </th>
+          <td mat-cell *matCellDef="let element">
+            <p class="mb-0 fw-medium">{{ element.reference }}</p>
+          </td>
+        </ng-container>
+
         <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef>Nom </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{"name" | translate}} </th>
           <td mat-cell *matCellDef="let element">
             <p class="mb-0 fw-medium">{{ element.name }}</p>
           </td>
         </ng-container>
 
-        <!-- Project Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Description </th>
+          <td mat-cell *matCellDef="let element">
+            <p class="mb-0 fw-medium">{{ element.description }}</p>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="unitType">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{"sparePart.unitType" | translate}} </th>
+          <td mat-cell *matCellDef="let element">
+            <p class="mb-0 fw-medium">{{ element.unitType }}</p>
+          </td>
+        </ng-container>
+
         <ng-container matColumnDef="category">
-          <th mat-header-cell *matHeaderCellDef> Catégorie</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{"category" | translate}} </th>
           <td mat-cell *matCellDef="let element">
-            <p class="mb-0 fw-medium">{{element.category}}</p>
+            <p class="mb-0 fw-medium">{{ element.category.name }}</p>
           </td>
         </ng-container>
 
-        <!-- Priority Column -->
-        <ng-container matColumnDef="vendor">
-          <th mat-header-cell *matHeaderCellDef>Vendeur</th>
-          <td mat-cell *matCellDef="let element">
-            <p class="mb-0 fw-medium">{{element.vendor}}</p>
-          </td>
-        </ng-container>
+<!--        <ng-container matColumnDef="vendors">-->
+<!--          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{"vendors" | translate}} </th>-->
+<!--          <td mat-cell *matCellDef="let element">-->
+<!--            <mat-list role="list" *ngFor="let spVendor of element.sparePartVendors">-->
+<!--              <mat-list-item role="listitem">{{spVendor.vendor.fistName}} {{spVendor.vendor.lastName}}</mat-list-item>-->
+<!--            </mat-list>-->
+<!--            <button mat-mini-fab class="mb-8 me-8" color="accent"-->
+<!--                    [routerLink]="['/add-inv-vendor/', element.id]">-->
+<!--              <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>-->
+<!--            </button>-->
+<!--          </td>-->
+<!--        </ng-container>-->
 
-        <!-- Budget Column -->
-        <ng-container matColumnDef="qte">
-          <th mat-header-cell *matHeaderCellDef> Quantité</th>
-          <td mat-cell *matCellDef="let element">
-            <p class="mb-0 fw-medium">{{element.qte}}</p>
-          </td>
-        </ng-container>
-
-        <ng-container matColumnDef="unitCost">
-          <th mat-header-cell *matHeaderCellDef> Coût unitaire</th>
-          <td mat-cell *matCellDef="let element">
-            <p class="mb-0 fw-medium">{{element.unitCost + "$"}}</p>
-          </td>
-        </ng-container>
-
-        <ng-container matColumnDef="po">
-          <th mat-header-cell *matHeaderCellDef>CA</th>
-          <td mat-cell *matCellDef="let element">
-            <p class="mb-0 fw-medium">{{element.po}}</p>
-          </td>
-        </ng-container>
+<!--        <ng-container matColumnDef="warehouses">-->
+<!--          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{"warehouse" | translate}}s </th>-->
+<!--          <td mat-cell *matCellDef="let element">-->
+<!--          <td mat-cell *matCellDef="let element">-->
+<!--            <mat-list role="list" *ngFor="let spWarehouse of element.sparePartWarehouses">-->
+<!--              <mat-list-item role="listitem">{{spWarehouse.warehouse.name}}</mat-list-item>-->
+<!--            </mat-list>-->
+<!--          <button mat-mini-fab class="mb-8 me-8" color="accent"-->
+<!--                  [routerLink]="['/add-inv-warehouse/', element.id]">-->
+<!--            <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>-->
+<!--          </button>-->
+<!--          </td>-->
+<!--        </ng-container>-->
 
         <ng-container matColumnDef="actions">
           <th mat-header-cell *matHeaderCellDef> Actions</th>
           <td mat-cell *matCellDef="let element">
             <div  style="display: flex; flex-direction: row">
-              <button mat-fab color="warn" class="shadow-none icon-48" (click)="openDialog()">
-                <i-tabler
-                  class="routeIcon"
-                  name="edit"
-                  matListItemIcon
-                ></i-tabler>
+              <button mat-mini-fab class="mb-8 me-8" color="accent" [routerLink]="['/view-inventory/',element.id]">
+                <mat-icon aria-label="Example icon-button with a heart icon" style="color: white;">remove_red_eye
+                </mat-icon>
               </button>
               <div>
                 <button
@@ -99,13 +113,16 @@
                     <i-tabler name="dots" class="icon-20"></i-tabler>
                   </mat-icon>
                 </button>
-                <mat-menu #menu="matMenu" class="cardWithShadow"  xPosition="before">
-                  <button mat-menu-item><mat-icon matListItemIcon>print</mat-icon>Imprimer</button>
-                  <button mat-menu-item><mat-icon matListItemIcon>person_add</mat-icon>Changer technicien</button>
-                  <button mat-menu-item><mat-icon matListItemIcon>low_priority</mat-icon>Changer priorité</button>
-                  <button mat-menu-item><mat-icon matListItemIcon>edit</mat-icon>Changer Etat</button>
-                  <button mat-menu-item><mat-icon matListItemIcon>zoom_in</mat-icon>Inspection</button>
-                  <button mat-menu-item><mat-icon matListItemIcon>delete</mat-icon>Supprimer</button>
+                <mat-menu #menu="matMenu" class="cardWithShadow">
+                  <button mat-menu-item [routerLink]="['/edit-inventory/',element.id]">
+                    <mat-icon>edit</mat-icon>
+                    {{"edit" | translate}}</button>
+                  <button mat-menu-item [routerLink]="['/add-inv-vendor/', element.id]">
+                    <mat-icon>add</mat-icon>{{"vendor.vendor" | translate}}</button>
+                  <button mat-menu-item [routerLink]="['/add-inv-warehouse/', element.id]">
+                    <mat-icon>add</mat-icon>{{"warehouse" | translate}}</button>
+                  <button mat-menu-item (click)="openDialog(element.firstName,element)">
+                    <mat-icon >delete</mat-icon>{{"delete" | translate}}</button>
 
                 </mat-menu>
               </div>
@@ -116,6 +133,8 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
+      <mat-paginator [length]="tableLength"
+                     [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
     </div>
   </mat-card-content>
 </mat-card>
